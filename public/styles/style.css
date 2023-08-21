@@ -1,0 +1,31 @@
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  font-family: sans-serif;
+  font-size: 1.1rem;
+  max-width: 1280px;
+}
+
+.navbar {
+  position: fixed;
+  top: 0.75rem;
+  left: 22.5vw;
+  margin-inline: auto;
+  padding: 0.95rem 0.75rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 1.5rem;
+  background: gainsboro;
+}
+.navbar__link {
+  padding: 0.5rem 0.75rem;
+  border-radius: 1.5rem;
+}
+.navbar__link-is-active {
+  padding: 0.5rem 0.75rem;
+  border-radius: 1.5rem;
+  background: whitesmoke;
+}/*# sourceMappingURL=style.css.map */
