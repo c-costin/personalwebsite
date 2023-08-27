@@ -14,6 +14,7 @@
         <p class="about__text">
             Pour ma petite histoire, je suis un passionné d’informatique depuis mon enfance. J’ai étudié et travail dans le domaine, d'administrateur réseau et télécoms au sein de l’Armée de l’Air et l’Espace, j'ai choisi de me reconvertir dans le développement web. Pour cette nouvelle aventure, j'ai choisi l'école O’Clock pour me former.
         </p>
+        <p class="about__resume">mon cv : <a href="" class="about__link">version clair</a> | <a href="" class="about__link">version sombre</a></p>
     </div>
 </section>
 
@@ -37,6 +38,17 @@
         }
         &__text {
             line-height: 1.85rem;
+        }
+        &__resume {
+            margin-top: 0.5rem;
+            font-family: $montserrat-italic;
+            align-self: flex-end;
+        }
+        &__link {
+            font-family: $montserrat-semibold-italic;
+            &:hover {
+                text-decoration: underline;
+            }
         }
     }
 </style>

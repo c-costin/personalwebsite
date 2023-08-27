@@ -23,8 +23,10 @@
 	}
 	.creator {
 		display: flex;
-		align-items: flex-end;
 		gap: 0.5rem;
+		&__name {
+			max-height: 18px;
+		}
 	}
 	.social {
 		display: flex;
