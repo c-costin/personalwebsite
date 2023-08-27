@@ -1,0 +1,33 @@
+/** =================== MONTSERRAT =================== **/
+
+/** Montserrat Light **/
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 300;
+  font-style: normal;
+  src: url("../public/assets/fonts/Montserrat-Light.woff") format("woff");
+}
+
+/** Montserrat Light-Italic **/
+@font-face {
+  font-family: "Montserrat Italic";
+  font-weight: 300;
+  font-style: italic;
+  src: url("../public/assets/fonts/Montserrat-LightItalic.woff") format("woff");
+}
+
+/** Montserrat SemiBold **/
+@font-face {
+  font-family: "Montserrat SemiBold";
+  font-weight: 600;
+  font-style: normal;
+  src: url("../public/assets/fonts/Montserrat-SemiBold.woff") format("woff");
+}
+
+/** Montserrat SemiBold-Italic **/
+@font-face {
+  font-family: "Montserrat SemiBold Italic";
+  font-weight: 600;
+  font-style: italic;
+  src: url("../public/assets/fonts/Montserrat-SemiBoldItalic.woff") format("woff");
+}

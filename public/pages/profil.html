@@ -3,15 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=montserrat:300,600" rel="stylesheet" />
     <link rel="stylesheet" href="../styles/style.css">
-    <script defer type="module" src="../js/app.js"></script>
+    <script defer type="module" src="../app.js"></script>
     <title>Costin Cadeau - Personal website</title>
 </head>
 <body>
     <nav class="navbar">
-        <a href="../index.html" class="navbar__link">Accueil</a>
+        <a href="../" class="navbar__link">Accueil</a>
         <a href="./profil.html" class="navbar__link navbar__link-is-active">Profil</a>
         <a href="./contact.html" class="navbar__link">Contact</a>
     </nav>
@@ -24,9 +22,12 @@
             <section class="contact"></section>
         </main>
     </div>
-    <footer class="footer">
+    <footer class="footer" id="footer">
         <div class="creator">
-            <img src="" alt="Logo de Costin Cadeau" class="creator__logo">
+            <picture>
+                <img src="../assets/images/logo20x20.png" alt="Logo de Costin Cadeau" class="creator__logo">
+                <source media="(min-width: )" srcset="" sizes="">
+            </picture>
             <p class="creator__name">Costin Cadeau</p>
         </div>
         <div class="social">

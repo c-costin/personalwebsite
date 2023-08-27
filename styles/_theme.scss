@@ -1,0 +1,24 @@
+// => Fonts
+@use "montserrat";
+
+// Colors
+$primary-blue: #2a4376;
+$primary-yellow: #ffc866;
+$neutral-black: #121212;
+$neutral-white: #f8f8f8;
+// $neutral-gray: ;
+$neutral-light-gray: #cecece;
+
+// Transparent colors
+$background-navbar: #cececede;
+$background-navbar-link: #f8f8f8de;
+
+// Box-shadow
+$main-shadow: #12121210 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) #12121205 0px 1px 2px 0px;
+$second-shadow: #12121205 0px 1px 2px 0px;
+
+// Fonts
+$montserrat: "Montserrat", sans-serif;
+$montserrat-italic: "Montserrat Italic", sans-serif;
+$montserrat-semibold: "Montserrat SemiBold", sans-serif;
+$montserrat-semibold-italic: "Montserrat SemiBold Italic", sans-serif;

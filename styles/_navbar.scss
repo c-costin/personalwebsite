@@ -1,0 +1,31 @@
+.navbar {
+  position: fixed;
+  top: 1.5rem;
+  left: 50%;
+  margin-inline: auto;
+  padding: 0.55rem 0.75rem;
+  display: flex;
+  gap: 0.25rem;
+  border-radius: 24px;
+  box-shadow: $main-shadow;
+  // box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  background: rgba(206, 206, 206, 0.87);
+  backdrop-filter: blur(1.5px);
+  -webkit-backdrop-filter: blur(1.5px);
+  transform: translateX(-50%);
+  &__link {
+    padding: 0.5rem 0.65rem;
+    width: 5.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 14px;
+  }
+  &__link-is-active {
+    padding: 0.55rem 0.75rem;
+    border-radius: 14px;
+    box-shadow: $second-shadow;
+    // box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+    background: rgba(255, 255, 255, 0.87);
+  }
+}

@@ -177,6 +177,35 @@ a:not([class]) {
   cursor: not-allowed;
 }
 
+/** =================== MONTSERRAT =================== **/
+/** Montserrat Light **/
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 300;
+  font-style: normal;
+  src: url("../public/assets/fonts/Montserrat-Light.woff") format("woff");
+}
+/** Montserrat Light-Italic **/
+@font-face {
+  font-family: "Montserrat Italic";
+  font-weight: 300;
+  font-style: italic;
+  src: url("../public/assets/fonts/Montserrat-LightItalic.woff") format("woff");
+}
+/** Montserrat SemiBold **/
+@font-face {
+  font-family: "Montserrat SemiBold";
+  font-weight: 600;
+  font-style: normal;
+  src: url("../public/assets/fonts/Montserrat-SemiBold.woff") format("woff");
+}
+/** Montserrat SemiBold-Italic **/
+@font-face {
+  font-family: "Montserrat SemiBold Italic";
+  font-weight: 600;
+  font-style: italic;
+  src: url("../public/assets/fonts/Montserrat-SemiBoldItalic.woff") format("woff");
+}
 :root {
   font-size: 16px;
 }
@@ -191,6 +220,13 @@ body {
   flex-direction: column;
   justify-content: space-between;
   font-family: "Montserrat", sans-serif;
+  color: #121212;
+  background: #F8F8F8;
+}
+
+.turbolinks-progress-bar {
+  height: 4px;
+  background: #2a4376;
 }
 
 .navbar {
@@ -198,29 +234,37 @@ body {
   top: 1.5rem;
   left: 50%;
   margin-inline: auto;
-  padding: 0.95rem 0.75rem;
-  width: -moz-max-content;
-  width: max-content;
+  padding: 0.55rem 0.75rem;
+  display: flex;
+  gap: 0.25rem;
   border-radius: 24px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
   background: rgba(206, 206, 206, 0.87);
   backdrop-filter: blur(1.5px);
   -webkit-backdrop-filter: blur(1.5px);
   transform: translateX(-50%);
 }
 .navbar__link {
-  padding: 0.5rem 0.75rem;
+  padding: 0.5rem 0.65rem;
+  width: 5.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 14px;
 }
 .navbar__link-is-active {
   padding: 0.55rem 0.75rem;
   border-radius: 14px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
   background: rgba(255, 255, 255, 0.87);
 }
 
 .hero {
-  margin-top: 10rem;
+  margin-top: 12rem;
   padding-inline: 1.5rem;
+}
+.hero__title {
+  font-family: "Montserrat SemiBold", sans-serif;
 }
 .hero__mark {
   color: #2a4376;
@@ -231,14 +275,20 @@ body {
 }
 
 .footer {
-  padding: 0.75rem 1rem;
+  padding: 1.75rem 1.25rem;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
   font-size: 0.85rem;
 }
 
+.creator {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
 .social {
   display: flex;
-  gap: 0.75rem;
+  gap: 1rem;
 }/*# sourceMappingURL=style.css.map */
