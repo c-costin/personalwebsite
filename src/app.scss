@@ -1,0 +1,29 @@
+/* Write your global styles here, in SCSS syntax. Variables and mixins from the src/variables.scss file are available here without importing */
+@use './reset.css';
+
+// Root variables
+:root {
+  font-size: 16px;
+}
+
+// Default link style
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  margin-inline: auto;
+  max-width: 640px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: $montserrat;
+  color: $neutral-black;
+  background: $neutral-white;
+}
+
+.text-mark {
+  color: $primary-blue;
+}
