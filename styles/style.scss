@@ -1,0 +1,70 @@
+// => Reset CSS
+@use "reset";
+
+// => Website theme
+@use 'theme';
+
+// => Navbar
+
+// Root variables
+:root {
+  font-size: 16px;
+}
+
+// Default link style
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: $montserrat;
+  color: $neutral-black;
+  background: $neutral-white;
+}
+
+.container {
+  max-width: 1024px;
+}
+
+.turbolinks-progress-bar {
+  height: 4px;
+  background: $primary-blue;
+}
+
+.hero {
+  margin-top: 12rem;
+  padding-inline: 1.5rem;
+  &__title {
+    font-family: $montserrat-semibold;
+  }
+  &__mark {
+    color: $primary-blue;
+  }
+}
+
+.main {
+  height: 160vh;
+}
+
+.footer {
+  padding: 1.75rem 1.25rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  font-size: 0.85rem;
+}
+
+.creator {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+.social {
+  display: flex;
+  gap: 1rem;
+}
