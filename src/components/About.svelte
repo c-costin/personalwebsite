@@ -6,13 +6,13 @@
     <img src="./images/me.jpg" alt="Photographie de Costin Cadeau" class="about__img">
     <div class="about__desc">
         <p class="about__text">
-            Hello, World ! Je suis Costin Cadeau développeur web, j’aime coder des deux côtes de la requête.
+            Hello, World ! Je suis Costin Cadeau développeur web et j’aime coder de chaque côtes de la requête !
         </p>
         <p class="about__text">
-            Pourquoi un artisan du web ?! J’aime faire le parallèle avec l’artisanat qui sont des métiers passionnant, créatif et unique. Le développement web permet cela, qu’on sois dev frontend ou dev backend, un projet est toujours unique !
+            Pourquoi un artisan du web ? J’aime faire un parallèle avec l’artisanat, ce sont des métiers passionnants, créatifs et uniques. Le développement web permet cela, qu’on soit développeur Front-End ou développeur Back-End, un projet est toujours unique !
         </p>
         <p class="about__text">
-            Pour ma petit histoire je suis passionné d’informatique depuis mes 11ans. J’ai étudié et travail dans le domaine, Mon dernier emploi était au seins de l’Armée de l’Air et l’Espace, j’était Administrateur réseaux et télécoms. Après avoir découvert l’HTML et le CSS, j’ai voulu devenir développeur web. Pour cet nouvelle aventure, je l’ai commencé avec O’Clock.
+            Pour ma petite histoire, je suis un passionné d’informatique depuis mon enfance. J’ai étudié et travail dans le domaine, d'administrateur réseau et télécoms au sein de l’Armée de l’Air et l’Espace, j'ai choisi de me reconvertir dans le développement web. Pour cette nouvelle aventure, j'ai choisi l'école O’Clock pour me former.
         </p>
     </div>
 </section>
