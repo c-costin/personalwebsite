@@ -8,7 +8,9 @@ const App = {
     },
     replaceURL: () => {
         window.history.replaceState(null, null, window.location.pathname.split('.html')[0]);
-    }
+        // window.history.pushState(null, null, window.location.pathname.split('.html')[0]);
+    },
+
 };
 
 document.addEventListener("DOMContentLoaded", App.init);
