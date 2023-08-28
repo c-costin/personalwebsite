@@ -27,7 +27,7 @@
 <style lang="scss">
 	.project {
 		margin-top: 12rem;
-		margin-bottom: 6rem;
+		margin-bottom: 7rem;
 		padding-inline: 1.5rem;
 		display: flex;
 		flex-direction: column;

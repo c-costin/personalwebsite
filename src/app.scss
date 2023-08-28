@@ -22,6 +22,8 @@ body {
   font-family: $montserrat;
   color: $neutral-black;
   background: $neutral-white;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
 }
 
 .text-mark {

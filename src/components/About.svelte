@@ -12,9 +12,9 @@
             Pourquoi un artisan du web ? J’aime faire un parallèle avec l’artisanat, ce sont des métiers passionnants, créatifs et uniques. Le développement web permet cela, qu’on soit développeur Front-End ou développeur Back-End, un projet est toujours unique !
         </p>
         <p class="about__text">
-            Pour ma petite histoire, je suis un passionné d’informatique depuis mon enfance. J’ai étudié et travail dans le domaine, d'administrateur réseau et télécoms au sein de l’Armée de l’Air et l’Espace, j'ai choisi de me reconvertir dans le développement web. Pour cette nouvelle aventure, j'ai choisi l'école O’Clock pour me former.
+            Pour ma petite histoire, je suis un passionné d’informatique depuis mon enfance. J’ai étudié et travail dans le domaine, d'administrateur réseau et télécom au sein de l’Armée de l’Air et l’Espace, j'ai choisi de me reconvertir dans le développement web. Pour cette nouvelle aventure, j'ai choisi l'école O’Clock pour me former.
         </p>
-        <p class="about__resume">mon cv : <a href="" class="about__link">version clair</a> | <a href="" class="about__link">version sombre</a></p>
+        <p class="about__resume">mon cv : <a href="/#" class="about__link">version clair</a> | <a href="/#" class="about__link">version sombre</a></p>
     </div>
 </section>
 

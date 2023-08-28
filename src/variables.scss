@@ -1,5 +1,4 @@
 /* Variables and mixins declared here will be available in all other SCSS files */
-@use 'fonts.css';
 
 // Colors
 $primary-blue: #2a4376;
@@ -10,8 +9,8 @@ $neutral-white: #f8f8f8;
 $neutral-light-gray: #e2e2e2;
 
 // Transparent colors
-$transparent-neutral-white: #f8f8f8EE;
-$transparent-neutral-light-gray: #e2e2e2EE;
+$transparent-neutral-white: #f8f8f8ee;
+$transparent-neutral-light-gray: #e2e2e2dd;
 
 // Box-shadow
 $main-shadow: #12121290 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) #12121290 0px 1px 2px 0px;
