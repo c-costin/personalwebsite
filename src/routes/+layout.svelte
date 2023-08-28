@@ -6,7 +6,7 @@
 	onMount(() => {
 		setTimeout(() => {
 			isPageLaoded = true;
-		}, 1500);
+		}, 1200);
 	});
 </script>
 
@@ -34,8 +34,8 @@
 		&__img {
             width: 8rem;
             border-radius: 1rem;
-			-webkit-animation: scale-up-center 700ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 200ms both;
-			animation: scale-up-center 700ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 200ms both;
+			-webkit-animation: scale-up-center 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 150ms both;
+			animation: scale-up-center 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 150ms both;
 		}
 	}
 	@-webkit-keyframes scale-up-center {

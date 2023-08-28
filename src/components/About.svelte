@@ -14,7 +14,7 @@
         <p class="about__text">
             Pour ma petite histoire, je suis un passionné d’informatique depuis mon enfance. J’ai étudié et travail dans le domaine, d'administrateur réseau et télécom au sein de l’Armée de l’Air et l’Espace, j'ai choisi de me reconvertir dans le développement web. Pour cette nouvelle aventure, j'ai choisi l'école O’Clock pour me former.
         </p>
-        <p class="about__resume">mon cv : <a href="/#" class="about__link">version clair</a> | <a href="/#" class="about__link">version sombre</a></p>
+        <p class="about__resume">mon cv : <a href="./documents/costin-cadeau_cv_l.pdf" target="_blank" rel="noopener noreferrer" class="about__link">version clair</a> | <a href="./documents/costin-cadeau_cv_d.pdf" target="_blank" rel="noopener noreferrer" class="about__link">version sombre</a></p>
     </div>
 </section>
 
