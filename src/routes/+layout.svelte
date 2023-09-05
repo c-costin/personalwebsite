@@ -18,7 +18,6 @@
     <slot />
 {/if}
 
-
 <style lang="scss">
 	.loader {
 		z-index: 9999;

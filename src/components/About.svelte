@@ -6,13 +6,13 @@
     <img src="./images/me.jpg" alt="Photographie de Costin Cadeau" class="about__img">
     <div class="about__desc">
         <p class="about__text">
-            Hello, World ! Je suis Costin Cadeau développeur web et j’aime coder de chaque côtes de la requête !
+            Hello, World ! Je suis Costin Cadeau développeur web et j’aime coder de chaque côté de la requête !
         </p>
         <p class="about__text">
-            Pourquoi un artisan du web ? J’aime faire un parallèle avec l’artisanat, ce sont des métiers passionnants, créatifs et uniques. Le développement web permet cela, qu’on soit développeur Front-End ou développeur Back-End, un projet est toujours unique !
+            Pourquoi un artisan du web ? J’aime faire un parallèle avec l’artisanat, ce sont des métiers passionnants, créatifs et uniques. Le développement web permet cela. Qu’on soit développeur Front-End ou développeur Back-End, chaque projet est unique !
         </p>
         <p class="about__text">
-            Pour ma petite histoire, je suis un passionné d’informatique depuis mon enfance. J’ai étudié et travail dans le domaine, d'administrateur réseau et télécom au sein de l’Armée de l’Air et l’Espace, j'ai choisi de me reconvertir dans le développement web. Pour cette nouvelle aventure, j'ai choisi l'école O’Clock pour me former.
+            Pour ma petite histoire, je suis un passionné d’informatique depuis mon enfance. J’ai étudié et travaillé dans le domaine de l'informatique comme administrateur réseau et télécom au sein de l’Armée de l’Air et l’Espace. Suite à ce parcours, je me suis reconvertis dans le développement web. Pour cette nouvelle aventure, j'ai choisi l'école O’Clock pour me former.
         </p>
         <p class="about__resume">mon cv : <a href="./documents/costin-cadeau_cv_l.pdf" target="_blank" rel="noopener noreferrer" class="about__link">version clair</a> | <a href="./documents/costin-cadeau_cv_d.pdf" target="_blank" rel="noopener noreferrer" class="about__link">version sombre</a></p>
     </div>

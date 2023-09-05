@@ -7,6 +7,10 @@
 	import Footer from '../../components/Footer.svelte';
 </script>
 
+<svelte:head>
+	<title>Costin Cadeau - Développeur Web & Web Mobile</title>
+</svelte:head>
+
 <Navbar isActive={'profil'} />
 
 <main class="main">

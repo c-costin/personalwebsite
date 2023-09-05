@@ -7,9 +7,9 @@
 		<img src="./images/logo20x20.png" alt="Logo de Costin Cadeau" class="creator__logo" />
 		<a href="./" class="creator__name">Costin Cadeau</a>
 	</div>
-	<div class="social">
-		<a href="https://www.linkedin.com/in/costin-cadeau/" target="_blank" rel="noopener noreferrer" class="social__link">Linkedin</a>
-		<a href="https://github.com/c-costin" target="_blank" rel="noopener noreferrer" class="social__link">GitHub</a>
+	<div class="soc">
+		<a href="https://www.linkedin.com/in/costin-cadeau/" target="_blank" rel="noopener noreferrer" class="soc__link">Linkedin</a>
+		<a href="https://github.com/c-costin" target="_blank" rel="noopener noreferrer" class="soc__link">GitHub</a>
 	</div>
 </footer>
 
@@ -28,7 +28,7 @@
 			max-height: 18px;
 		}
 	}
-	.social {
+	.soc {
 		display: flex;
 		gap: 1rem;
 	}
