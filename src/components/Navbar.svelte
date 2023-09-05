@@ -3,7 +3,7 @@
 	export let isActive = '';
 </script>
 
-<nav class="navbar">
+<nav class="navbar" data-sveltekit-replacestate>
 	<a href="/" class="navbar__link {isActive === 'home' ? 'navbar__link-is-active' : ''}">Accueil</a>
 	<a href="/profil" class="navbar__link {isActive === 'profil' ? 'navbar__link-is-active' : ''}">Profil</a>
 	<a href="/contact" class="navbar__link {isActive === 'contact' ? 'navbar__link-is-active' : ''}">Contact</a>
