@@ -3,7 +3,7 @@
 </script>
 
 <section class="project">
-	<h2 class="project__title text-mark">Projets</h2>
+	<h2 class="project__title">Projets</h2>
 	<ul class="project__list">
 		<li class="project__item">
 			<h3 class="project__name">eCommerce - C-Studio (en cours)</h3>
@@ -34,6 +34,7 @@
 		gap: 2rem;
 		&__title {
 			font-family: $montserrat-semibold;
+			color: $primary-blue;
 		}
 		&__list {
 			display: flex;

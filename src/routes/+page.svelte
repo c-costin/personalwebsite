@@ -7,7 +7,7 @@
 </script>
 
 <svelte:head>
-	<title>Costin Cadeau - Développeur Web & Web Mobile</title>
+	<title>Accueil - Costin Cadeau, développeur Web & Web Mobile</title>
 </svelte:head>
 
 <Navbar isActive={'home'} />

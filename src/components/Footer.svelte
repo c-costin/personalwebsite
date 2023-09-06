@@ -1,11 +1,12 @@
 <script>
 	import '../app.scss';
+	import logo20 from '$lib/images/logo20x20.png';
 </script>
 
 <footer class="footer">
 	<div class="creator">
-		<img src="./images/logo20x20.png" alt="Logo de Costin Cadeau" class="creator__logo" />
-		<a href="./" class="creator__name">Costin Cadeau</a>
+		<img src="{logo20}" alt="Logo de Costin Cadeau" class="creator__logo" />
+		<a href="/" class="creator__name">Costin Cadeau</a>
 	</div>
 	<div class="soc">
 		<a href="https://www.linkedin.com/in/costin-cadeau/" target="_blank" rel="noopener noreferrer" class="soc__link">Linkedin</a>
@@ -25,7 +26,7 @@
 		display: flex;
 		gap: 0.5rem;
 		&__name {
-			max-height: 18px;
+			max-height: 15px;
 		}
 	}
 	.soc {

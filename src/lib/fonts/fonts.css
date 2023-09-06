@@ -4,7 +4,7 @@
   font-family: "Montserrat";
   font-weight: 300;
   font-style: normal;
-  src: url("./fonts/Montserrat-Light.woff") format("woff");
+  src: url("./Montserrat-Light.woff") format("woff");
 }
 
 /** Montserrat Light-Italic **/
@@ -12,7 +12,7 @@
   font-family: "Montserrat Italic";
   font-weight: 300;
   font-style: italic;
-  src: url("./fonts/Montserrat-LightItalic.woff") format("woff");
+  src: url("./Montserrat-LightItalic.woff") format("woff");
 }
 
 /** Montserrat SemiBold **/
@@ -20,7 +20,7 @@
   font-family: "Montserrat SemiBold";
   font-weight: 600;
   font-style: normal;
-  src: url("./fonts/Montserrat-SemiBold.woff") format("woff");
+  src: url("./Montserrat-SemiBold.woff") format("woff");
 }
 
 /** Montserrat SemiBold-Italic **/
@@ -28,5 +28,5 @@
   font-family: "Montserrat SemiBold Italic";
   font-weight: 600;
   font-style: italic;
-  src: url("./fonts/Montserrat-SemiBoldItalic.woff") format("woff");
+  src: url("./Montserrat-SemiBoldItalic.woff") format("woff");
 }

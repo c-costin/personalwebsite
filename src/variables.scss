@@ -14,7 +14,7 @@ $transparent-neutral-light-gray: #e2e2e2dd;
 
 // Box-shadow
 $main-shadow: #12121290 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) #12121290 0px 1px 2px 0px;
-$second-shadow: #12121205 0px 1px 2px 0px;
+$second-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
 
 // Fonts
 $montserrat: 'Montserrat', sans-serif;
