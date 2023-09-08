@@ -8,11 +8,12 @@
 	<title>Contact - Costin Cadeau, développeur Web & Web Mobile</title>
 </svelte:head>
 
-
 <Navbar isActive={'contact'} />
 
-<main class="main">
-	<Contact />
-</main>
+<div class="container">
+	<main class="main">
+		<Contact />
+	</main>
 
-<Footer />
+	<Footer />
+</div>

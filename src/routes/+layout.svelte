@@ -5,10 +5,10 @@
 	import imgMe from '$lib/images/me.jpg';
 	import logo256 from '$lib/images/logo256x256.png';
 	import logo20 from '$lib/images/logo20x20.png';
-	import iconApple from '$lib/icons/apple-touch-icon.png';
-	import favicon32 from '$lib/icons/favicon-32x32.png';
-	import favicon16 from '$lib/icons/favicon-16x16.png';
-	import manifest from '$lib/icons/site.webmanifest';
+	import iconApple from '$lib/favicon/apple-touch-icon.png';
+	import favicon32 from '$lib/favicon/favicon-32x32.png';
+	import favicon16 from '$lib/favicon/favicon-16x16.png';
+	import manifest from '$lib/favicon/site.webmanifest';
 
 	let isPageLaoded = false;
 	onMount(() => {

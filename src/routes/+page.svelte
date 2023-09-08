@@ -1,9 +1,13 @@
 <script>
 	import Navbar from '../components/Navbar.svelte';
-	import Footer from '../components/Footer.svelte';
-	import Contact from '../components/Contact.svelte';
-	import Project from '../components/Project.svelte';
 	import Hero from '../components/Hero.svelte';
+	import Project from '../components/Project.svelte';
+	import Contact from '../components/Contact.svelte';
+	import Footer from '../components/Footer.svelte';
+	import Settings from '../components/Settings.svelte';
+	import Accessibility from '../components/Accessibility.svelte';
+
+	let isSettingOpen = false;
 </script>
 
 <svelte:head>
@@ -12,11 +16,20 @@
 
 <Navbar isActive={'home'} />
 
-<Hero />
+<Accessibility on:openSetting={() => isSettingOpen = !isSettingOpen}/>
 
-<main class="main">
-	<Project />
-    <Contact />
-</main>
+{#if isSettingOpen}
+	<Settings on:closeSetting={() => isSettingOpen = !isSettingOpen} />
+{/if}
 
-<Footer />
+
+<div class="container">
+	<Hero />
+
+	<main class="main">
+		<Project />
+		<Contact />
+	</main>
+
+	<Footer />
+</div>

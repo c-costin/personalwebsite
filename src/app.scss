@@ -14,8 +14,6 @@ a {
 }
 
 body {
-  margin-inline: auto;
-  max-width: 768px;
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
@@ -25,6 +23,11 @@ body {
   background: $neutral-white;
   overflow-y: scroll;
   scroll-behavior: smooth;
+}
+
+.container {
+  margin-inline: auto;
+  max-width: 768px;
 }
 
 .text-mark {

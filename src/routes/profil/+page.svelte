@@ -1,5 +1,7 @@
 <script>
 	import Navbar from '../../components/Navbar.svelte';
+	import Accessibility from '../../components/Accessibility.svelte';
+	import Settings from '../../components/Settings.svelte';
 	import About from '../../components/About.svelte';
 	import Experience from '../../components/Experience.svelte';
 	import Study from '../../components/Study.svelte';
@@ -13,11 +15,19 @@
 
 <Navbar isActive={'profil'} />
 
-<main class="main">
-	<About />
-	<Experience />
-	<Study />
-	<Contact />
-</main>
+<Accessibility />
 
-<Footer />
+{#if isSettingOpen}
+	<Settings />
+{/if}
+
+<div class="container">
+	<main class="main">
+		<About />
+		<Experience />
+		<Study />
+		<Contact />
+	</main>
+
+	<Footer />
+</div>
