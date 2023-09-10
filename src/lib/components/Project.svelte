@@ -1,7 +1,3 @@
-<script>
-	import '../app.scss';
-</script>
-
 <section class="project">
 	<h2 class="project__title">Projets</h2>
 	<ul class="project__list">
@@ -25,6 +21,9 @@
 </section>
 
 <style lang="scss">
+	@import '../font/fonts.css';
+	@import '../styles/variables';
+
 	.project {
 		margin-top: 12rem;
 		margin-bottom: 7rem;
@@ -33,8 +32,8 @@
 		flex-direction: column;
 		gap: 2rem;
 		&__title {
-			font-family: $montserrat-semibold;
-			color: $primary-blue;
+			font-family: $font-montserrat-semi;
+			color: $color-primary;
 		}
 		&__list {
 			display: flex;
@@ -51,7 +50,13 @@
 		}
 		&__name {
       font-size: 1rem;
-			font-family: $montserrat-italic;
+			font-family: $font-montserrat-italic;
+		}
+	}
+
+	@media (prefers-color-scheme: dark) {
+		.project__title {
+			color: $color-secondary;
 		}
 	}
 </style>

@@ -1,32 +1,32 @@
 /** =================== MONTSERRAT =================== **/
 /** Montserrat Light **/
 @font-face {
-  font-family: "Montserrat";
+  font-family: "montserrat";
   font-weight: 300;
   font-style: normal;
-  src: url("./Montserrat-Light.woff") format("woff");
+  src: url("./montserrat-light.woff") format("woff");
 }
 
 /** Montserrat Light-Italic **/
 @font-face {
-  font-family: "Montserrat Italic";
+  font-family: "montserrat-italic";
   font-weight: 300;
   font-style: italic;
-  src: url("./Montserrat-LightItalic.woff") format("woff");
+  src: url("./montserrat-lightItalic.woff") format("woff");
 }
 
 /** Montserrat SemiBold **/
 @font-face {
-  font-family: "Montserrat SemiBold";
+  font-family: "montserrat-semi";
   font-weight: 600;
   font-style: normal;
-  src: url("./Montserrat-SemiBold.woff") format("woff");
+  src: url("./montserrat-semi.woff") format("woff");
 }
 
 /** Montserrat SemiBold-Italic **/
 @font-face {
-  font-family: "Montserrat SemiBold Italic";
+  font-family: "montserrat-semi-italic";
   font-weight: 600;
   font-style: italic;
-  src: url("./Montserrat-SemiBoldItalic.woff") format("woff");
+  src: url("./montserrat-semiItalic.woff") format("woff");
 }

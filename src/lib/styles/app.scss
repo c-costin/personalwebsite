@@ -1,11 +1,7 @@
-/* Write your global styles here, in SCSS syntax. Variables and mixins from the src/variables.scss file are available here without importing */
-@use './reset.css';
+@use '_reset.css';
+@import '../font/fonts.css';
+@import 'variables';
 
-// Root variables
-:root {
-  font-size: 15px;
-  font-display: fallback;
-}
 
 // Default link style
 a {
@@ -18,23 +14,21 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  font-family: $montserrat;
-  color: $neutral-black;
-  background: $neutral-white;
+  font-family: $font-montserrat;
+  color: $color-neutral-secondary;
+  background: $color-neutral-primary;
   overflow-y: scroll;
   scroll-behavior: smooth;
 }
 
 .container {
   margin-inline: auto;
+  width: 100%;
   max-width: 768px;
 }
 
 .text-mark {
-  color: $primary-blue;
-  &:hover {
-    color: $primary-yellow;
-  }
+  color: $color-primary;
 }
 
 @media screen and (min-width: 380px) {
@@ -46,5 +40,15 @@ body {
 @media screen and (min-width: 640px) {
   :root {
     font-size: 18px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+	body {
+    color: $color-neutral-primary;
+    background: $color-neutral-secondary;
+	}
+  .text-mark {
+    color: $color-secondary;
   }
 }

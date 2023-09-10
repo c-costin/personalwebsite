@@ -1,15 +1,27 @@
 <script>
+    import '$lib/styles/app.scss';
+
+	// Import modules
 	import { page } from '$app/stores';
-	import Footer from '../components/Footer.svelte';
-	import '$lib/fonts/fonts.css';
-	import Navbar from '../components/Navbar.svelte';
+
+	// Import components
+	import Navbar from '$lib/components/Navbar.svelte';
+	import Settings from '$lib/components/Settings.svelte';
+	import Footer from '$lib/components/Footer.svelte';
+
+	// Declare variable
+	let isSettingOpen = false;
 </script>
 
 <svelte:head>
 	<title>Page non trouvée - Costin Cadeau, développeur Web & Web Mobile</title>
 </svelte:head>
 
-<Navbar />
+<Navbar openSetting={isSettingOpen} on:openSetting={() => (isSettingOpen = !isSettingOpen)} />
+
+{#if isSettingOpen}
+	<Settings />
+{/if}
 
 <main class="main">
 	{#if $page.status === 404}

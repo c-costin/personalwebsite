@@ -1,7 +1,3 @@
-<script>
-	import '../app.scss';
-</script>
-
 <header class="hero">
 	<h1 class="hero__title">
 		Bonjour, je suis Costin, un <span class="text-mark">artisan du web</span>. Je conçois et
@@ -11,11 +7,15 @@
 </header>
 
 <style lang="scss">
-    .hero {
-		margin-top: 12rem;
+	@import '../font/fonts.css';
+	@import '../styles/variables';
+
+	.hero {
+		margin-top: 14rem;
 		padding-inline: 1.5rem;
+		min-height: 40vh;
 		&__title {
-			font-family: $montserrat-semibold;
+			font-family: $font-montserrat-semi;
 		}
 	}
 </style>

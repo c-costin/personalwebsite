@@ -1,7 +1,3 @@
-<script>
-	import '../app.scss';
-</script>
-
 <section class="contact">
 	<h2 class="contact__title">Travaillons ensemble.</h2>
 	<a href="mailto:c%6f&#110;ta&#99;&#116;&#64;&#99;&#111;&#115;&#116;&#105;&#110;c&#97;d%65a&#117;%2e%66%72">
@@ -10,6 +6,9 @@
 </section>
 
 <style lang="scss">
+	@import '../font/fonts.css';
+	@import '../styles/variables';
+
 	.contact {
 		margin-block: 3rem;
 		min-height: 70vh;
@@ -17,7 +16,7 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		font-family: $montserrat-semibold;
+		font-family: $font-montserrat-semi;
 		&__title {
 			font-size: 1.6rem;
 		}

@@ -1,12 +1,16 @@
 <script>
-	import Navbar from '../components/Navbar.svelte';
-	import Hero from '../components/Hero.svelte';
-	import Project from '../components/Project.svelte';
-	import Contact from '../components/Contact.svelte';
-	import Footer from '../components/Footer.svelte';
-	import Settings from '../components/Settings.svelte';
-	import Accessibility from '../components/Accessibility.svelte';
+	// Import Style
+	import '$lib/styles/app.scss';
 
+	// Import components
+	import Navbar from '$lib/components/Navbar.svelte';
+	import Settings from '$lib/components/Settings.svelte';
+	import Hero from '$lib/components/Hero.svelte';
+	import Project from '$lib/components/Project.svelte';
+	import Contact from '$lib/components/Contact.svelte';
+	import Footer from '$lib/components/Footer.svelte';
+
+	// Declare variable
 	let isSettingOpen = false;
 </script>
 
@@ -14,14 +18,15 @@
 	<title>Accueil - Costin Cadeau, développeur Web & Web Mobile</title>
 </svelte:head>
 
-<Navbar isActive={'home'} />
-
-<Accessibility on:openSetting={() => isSettingOpen = !isSettingOpen}/>
+<Navbar
+	isActive={'home'}
+	openSetting={isSettingOpen}
+	on:openSetting={() => (isSettingOpen = !isSettingOpen)}
+/>
 
 {#if isSettingOpen}
-	<Settings on:closeSetting={() => isSettingOpen = !isSettingOpen} />
+	<Settings />
 {/if}
-
 
 <div class="container">
 	<Hero />

@@ -1,11 +1,10 @@
 <script>
-	import '../app.scss';
-	import logo20 from '$lib/images/logo20x20.png';
+	import logo from '$lib/img/logo_small.png';
 </script>
 
 <footer class="footer">
 	<div class="creator">
-		<img src="{logo20}" alt="Logo de Costin Cadeau" class="creator__logo" />
+		<img src="{logo}" alt="Logo de Costin Cadeau" class="creator__logo" />
 		<a href="/" class="creator__name">Costin Cadeau</a>
 	</div>
 	<div class="soc">
@@ -15,6 +14,9 @@
 </footer>
 
 <style lang="scss">
+	@import '../font/fonts.css';
+	@import '../styles/variables';
+
 	.footer {
 		padding: 1.75rem 1.25rem;
 		display: flex;
