@@ -16,7 +16,7 @@ body {
   justify-content: space-between;
   font-family: $font-montserrat;
   color: $color-neutral-secondary;
-  background: $color-neutral-primary;
+  background: #fff;
   overflow-y: scroll;
   scroll-behavior: smooth;
 }
@@ -25,10 +25,6 @@ body {
   margin-inline: auto;
   width: 100%;
   max-width: 768px;
-}
-
-.text-mark {
-  color: $color-primary;
 }
 
 @media screen and (min-width: 380px) {
@@ -44,11 +40,11 @@ body {
 }
 
 @media (prefers-color-scheme: dark) {
-	body {
-    color: $color-neutral-primary;
-    background: $color-neutral-secondary;
-	}
-  .text-mark {
-    color: $color-secondary;
-  }
+	// body {
+  //   color: $color-neutral-primary;
+  //   background: $color-neutral-secondary;
+	// }
+  // .text-mark {
+  //   color: $color-secondary;
+  // }
 }

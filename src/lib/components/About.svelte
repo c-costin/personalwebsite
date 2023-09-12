@@ -69,6 +69,7 @@
 		}
 		&__link {
 			font-family: $font-montserrat-semi-italic;
+			color: #0B47BF;
 			&:hover {
 				text-decoration: underline;
 			}

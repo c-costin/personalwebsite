@@ -83,8 +83,8 @@
 	}
 
 	@media (prefers-color-scheme: dark) {
-		.loader {
-			background: $color-neutral-secondary;
-		}
+		// .loader {
+		// 	background: $color-neutral-secondary;
+		// }
 	}
 </style>

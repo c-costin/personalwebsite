@@ -40,8 +40,7 @@
 		flex-direction: column;
 		gap: 2rem;
 		&__title {
-			font-family: $font-montserrat-semi;
-			color: $color-primary;
+			font-family: $font-montserrat-semi; 
 		}
 		&__list {
 			display: flex;
@@ -66,8 +65,8 @@
 	}
 
 	@media (prefers-color-scheme: dark) {
-		.study__title {
-			color: $color-secondary;
-		}
+		// .study__title {
+		// 	color: $color-secondary;
+		// }
 	}
 </style>

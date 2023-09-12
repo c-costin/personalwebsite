@@ -68,15 +68,14 @@
 		gap: 0.25rem;
 		align-items: center;
 		border-radius: 24px;
-		box-shadow: $shadow-primary;
-		background: $color-neutral-third-transparent;
-		backdrop-filter: blur(3.8px);
-		-webkit-backdrop-filter: blur(3.8px);
-		border: 1px solid rgba(226, 226, 226, 0.24);
+		background-color: rgba(232, 229, 228, 0.45);
+		backdrop-filter: blur(16px);
+		-webkit-backdrop-filter: blur(16px);
+
 		transform: translateX(-50%);
 		&__link {
-			padding-block: 0.25rem;
-			width: 4.75rem;
+			padding-block: 0.15rem;
+			width: 5rem;
 			display: flex;
 			justify-content: center;
 			align-items: center;
@@ -96,8 +95,7 @@
 			background: none;
 		}
 		&__link-is-active {
-			box-shadow: $shadow-secondary;
-			background: $color-neutral-primary;
+			background: #fff;
 		}
 	}
 </style>

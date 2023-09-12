@@ -68,16 +68,14 @@
 		top: 5rem;
 		left: 50%;
 		padding: 1rem;
-		width: 256px;
+		width: 296px;
 		height: fit-content;
 		display: flex;
 		flex-direction: column;
 		border-radius: 0.5rem;
-		background: $color-neutral-third-transparent;
-		box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-		backdrop-filter: blur(3.8px);
-		-webkit-backdrop-filter: blur(3.8px);
-		border: 1px solid rgba(226, 226, 226, 0.24);
+		background-color: rgba(232, 229, 228, 0.45);
+		backdrop-filter: blur(16px);
+		-webkit-backdrop-filter: blur(16px);
 		transform: translateX(-50%);
 		&__title {
 			padding-inline: 0.5rem;
@@ -126,13 +124,14 @@
 			background: $color-neutral-secondary;
 		}
 		&__btnTheme {
+			padding-block: 0.25rem;
 			width: 50%;
-			font-family: $font-montserrat-italic;
+			font-family: $font-montserrat;
 			border-radius: 0.5rem;
 			background: none;
 			&-is-active {
-				box-shadow: $shadow-secondary;
-				background: $color-neutral-primary-transparent;
+				color: $color-neutral-primary;
+				background: #466FC2;
 			}
 		}
 		&__reset {
@@ -141,7 +140,7 @@
 			padding-block: 0.35rem;
 			border-radius: 0.75rem;
 			font-family: $font-montserrat-semi;
-			background: $color-primary;
+			background: #fff;
 		}
 	}
 	@media screen and (min-width: 596px) {
@@ -156,21 +155,6 @@
 	}
 
 	@media (prefers-color-scheme: dark) {
-		.setting {
-			background: $color-neutral-fourth-transparent;
-			&__separator {
-				background: $color-neutral-primary;
-			}
-			&__btnTheme {
-				&-is-active {
-					box-shadow: $shadow-secondary;
-					background: $color-neutral-fourth-transparent;
-				}
-			}
-			&__reset {
-				color: $color-neutral-secondary;
-				background: $color-secondary;
-			}
-		}
+
 	}
 </style>

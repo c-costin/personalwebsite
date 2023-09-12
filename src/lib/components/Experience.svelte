@@ -39,7 +39,6 @@
 		gap: 2rem;
 		&__title {
 			font-family: $font-montserrat-semi;
-			color: $color-primary;
 		}
 		&__list {
 			display: flex;
@@ -64,8 +63,8 @@
 	}
 
 	@media (prefers-color-scheme: dark) {
-		.experience__title {
-			color: $color-secondary;
-		}
+		// .experience__title {
+		// 	color: $color-secondary;
+		// }
 	}
 </style>
