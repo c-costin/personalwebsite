@@ -32,3 +32,10 @@ body {
 		font-size: 18px;
 	}
 }
+
+@media (prefers-color-scheme: dark) {
+	body {
+		color: var.$color-white;
+		background: var.$color-black;
+	}
+}

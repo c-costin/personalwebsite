@@ -41,6 +41,7 @@
 		justify-content: space-between;
 		font-size: 0.85rem;
 	}
+
 	.creator {
 		display: flex;
 		gap: 0.5rem;
@@ -52,6 +53,7 @@
 			}
 		}
 	}
+
 	.soc {
 		display: flex;
 		gap: 1rem;
@@ -59,6 +61,42 @@
 			&:hover {
 				color: var.$color-blue;
 				text-decoration: underline;
+			}
+		}
+	}
+
+	@media (prefers-color-scheme: dark) {
+		.creator {
+			&__name {
+				&:hover {
+					color: var.$color-yellow;
+				}
+			}
+		}
+
+		.soc {
+			&__link {
+				&:hover {
+					color: var.$color-yellow;
+				}
+			}
+		}
+	}
+
+	:global(body.dark) {
+		.creator {
+			&__name {
+				&:hover {
+					color: var.$color-yellow;
+				}
+			}
+		}
+
+		.soc {
+			&__link {
+				&:hover {
+					color: var.$color-yellow;
+				}
 			}
 		}
 	}

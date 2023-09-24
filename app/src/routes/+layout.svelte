@@ -23,6 +23,12 @@
 	// Declare variable
 	let isPageLaoded: Boolean = false;
 	let isSettingOpen: Boolean = false;
+	let isDark: Boolean;
+
+	if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+		window.document.body.classList.toggle('dark');
+		isDark = true;
+	}
 
 	// Declare functions
 	onMount(() => {
@@ -32,31 +38,31 @@
 	});
 </script>
 
-<div class="container">
-	<Navbar
-		currentPage={data.pathname}
-		openSetting={isSettingOpen}
-		on:openSetting={() => (isSettingOpen = !isSettingOpen)}
-	/>
+{#if !isPageLaoded}
+	<div class="loader">
+		<img src={logoNormal} alt="Logo de Costin Cadeau" class="loader__img" />
+	</div>
+{:else}
+	<div class="container">
+		<Navbar
+			currentPage={data.pathname}
+			openSetting={isSettingOpen}
+			on:openSetting={() => (isSettingOpen = !isSettingOpen)}
+		/>
 
-	{#if isSettingOpen}
-		<Settings />
-	{/if}
+		{#if isSettingOpen}
+			<Settings isThemeDark={isDark} />
+		{/if}
 
-	{#if !isPageLaoded}
-		<div class="loader">
-			<img src={logoNormal} alt="Logo de Costin Cadeau" class="loader__img" />
-		</div>
-	{:else}
 		{#key data.pathname}
 			<main class="main" transition:fade>
 				<slot />
 			</main>
 		{/key}
-	{/if}
 
-	<Footer />
-</div>
+		<Footer />
+	</div>
+{/if}
 
 <style lang="scss">
 	@use '../lib/styles/variables' as var;
@@ -75,7 +81,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		background: var.$color-white;
+		background: inherit;
 		&__img {
 			width: 8rem;
 			border-radius: 1rem;
@@ -83,6 +89,7 @@
 			animation: scale-up-center 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 150ms both;
 		}
 	}
+
 	@-webkit-keyframes scale-up-center {
 		0% {
 			-webkit-transform: scale(0.5);
@@ -95,6 +102,7 @@
 			opacity: 1;
 		}
 	}
+
 	@keyframes scale-up-center {
 		0% {
 			-webkit-transform: scale(0.5);

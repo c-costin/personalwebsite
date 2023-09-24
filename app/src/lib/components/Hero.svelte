@@ -19,4 +19,12 @@
 			color: var.$color-blue;
 		}
 	}
+
+	@media (prefers-color-scheme: dark) {
+		.hero {
+			&__mark {
+				color: var.$color-yellow;
+			}
+		}
+	}
 </style>

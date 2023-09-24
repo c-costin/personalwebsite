@@ -3,7 +3,7 @@
 	<ul class="project__list">
 		<li class="project__item">
 			<h3 class="project__name">eCommerce - C-Studio (en cours)</h3>
-			<a 
+			<a
 				href="https://github.com/costin-projects/project-c-studio"
 				target="_blank"
 				rel="noopener noreferrer"
@@ -77,8 +77,12 @@
 	}
 
 	@media (prefers-color-scheme: dark) {
-		// .project__title {
-		// 	color: $color-secondary;
-		// }
+		.project {
+			&__item {
+				&:hover {
+					color: var.$color-yellow;
+				}
+			}
+		}
 	}
 </style>

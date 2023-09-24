@@ -28,4 +28,12 @@
 			}
 		}
 	}
+
+	@media (prefers-color-scheme: dark) {
+		.contact {
+			&__mark {
+				color: var.$color-yellow;
+			}
+		}
+	}
 </style>

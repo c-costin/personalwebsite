@@ -6,30 +6,8 @@ $font-montserrat-semi-italic: 'montserrat-semi-italic', sans-serif;
 
 // ==== Colors ====
 $color-blue: #2a4376;
-$color-yellow: #c28f1f;
+$color-yellow: #ffc866;
 $color-green: #36754e;
 $color-red: #c23a32;
 $color-black: #161616;
 $color-white: #ffffff;
-
-// ==== Color primaries ====
-$color-primary: #2a4376;
-$color-primary-transparent: #2a437670;
-$color-secondary: #ffc866;
-$color-secondary-transparent: #ffc86670;
-
-// ==== Color neutrals ====
-$color-neutral-primary: #f8f8f8;
-$color-neutral-primary-transparent: #f8f8f885;
-$color-neutral-secondary: #121212;
-$color-neutral-secondary-transparent: #12121202;
-$color-neutral-third: #e2e2e2;
-$color-neutral-third-transparent: #e2e2e298;
-$color-neutral-fourth: #404040;
-$color-neutral-fourth-transparent: #40404099;
-
-// ==== Shadows ====
-$shadow-primary: $color-neutral-secondary-transparent 0px 2px 8px 0px;
-$shadow-secondary: $color-neutral-secondary-transparent 0px 1px 0px,
-	$color-neutral-third-transparent 0px 1px 0px inset;
-// $shadow-third: ;

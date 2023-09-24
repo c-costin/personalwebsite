@@ -21,7 +21,7 @@
 			développement web. Pour cette nouvelle aventure, j'ai choisi l'école O’Clock pour me former.
 		</p>
 		<p class="about__resume">
-			mon cv : 
+			mon cv :
 			<a
 				href="/documents/costin-cadeau_cv_l.pdf"
 				target="_blank"
@@ -76,6 +76,14 @@
 			color: var.$color-blue;
 			&:hover {
 				text-decoration: underline;
+			}
+		}
+	}
+
+	@media (prefers-color-scheme: dark) {
+		.about {
+			&__link {
+				color: var.$color-yellow;
 			}
 		}
 	}

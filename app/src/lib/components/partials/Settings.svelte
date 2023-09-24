@@ -1,15 +1,18 @@
-<script>
+<script lang="ts">
 	import '$lib/styles/main.scss';
 
 	import { fade } from 'svelte/transition';
 
-	let isThemeDark = false;
+	export let isThemeDark: Boolean = false;
+	export let fontSize: Number = 15;
+	export let interlineSize: Number = 1.5;
 
-	export let fontSize = 15;
-	export let interlineSize = 1.5;
-
+	const changeTheme = () => {
+		window.document.body.classList.toggle('dark')
+		isThemeDark = !isThemeDark;
+	};
 	const reset = () => {
-		fontSize = 15;
+		fontSize = 16;
 		interlineSize = 1.5;
 	};
 </script>
@@ -44,15 +47,15 @@
 		</div>
 		<div class="setting__themeChoice">
 			<button
-				on:click={() => (isThemeDark = false)}
-				class="setting__btnTheme {!isThemeDark ? 'setting__btnTheme-is-active' : ''}"
+				on:click={changeTheme}
+				class="setting__btnTheme {!isThemeDark ? 'setting__btnTheme-isActive' : ''}"
 			>
 				clair
 			</button>
 			<div class="setting__divisor" />
 			<button
-				on:click={() => (isThemeDark = true)}
-				class="setting__btnTheme {isThemeDark ? 'setting__btnTheme-is-active' : ''}"
+				on:click={changeTheme}
+				class="setting__btnTheme {isThemeDark ? 'setting__btnTheme-isActive' : ''}"
 			>
 				sombre
 			</button>
@@ -63,6 +66,7 @@
 
 <style lang="scss">
 	@use '../../styles/variables' as var;
+
 	.setting {
 		z-index: 999999;
 		position: fixed;
@@ -74,7 +78,7 @@
 		display: flex;
 		flex-direction: column;
 		border-radius: 0.5rem;
-		background-color: rgba(232, 229, 228, 0.45);
+		background: rgba(232, 229, 228, 0.45);
 		backdrop-filter: blur(16px);
 		-webkit-backdrop-filter: blur(16px);
 		transform: translateX(-50%);
@@ -89,7 +93,7 @@
 			width: 100%;
 			height: 1px;
 			border-radius: 1rem;
-			background: var.$color-neutral-secondary;
+			background: var.$color-black;
 		}
 		&__action {
 			padding: 1.5rem 0.75rem;
@@ -122,17 +126,18 @@
 			width: 1.5px;
 			height: 1.5rem;
 			border-radius: 1rem;
-			background: var.$color-neutral-secondary;
+			background: var.$color-black;
 		}
 		&__btnTheme {
 			padding-block: 0.25rem;
 			width: 50%;
-			font-family: var.$font-montserrat;
 			border-radius: 0.5rem;
+			border: 3px solid transparent;
 			background: none;
-			&-is-active {
-				color: var.$color-neutral-primary;
-				background: #466FC2;
+			font-family: var.$font-montserrat-semi;
+			&-isActive {
+				border: 3px solid var.$color-blue;
+				background: var.$color-white;
 			}
 		}
 		&__reset {
@@ -140,18 +145,59 @@
 			margin-inline: 0.5rem;
 			padding-block: 0.35rem;
 			border-radius: 0.75rem;
+			color: var.$color-white;
+			background: var.$color-blue;
 			font-family: var.$font-montserrat-semi;
-			background: #fff;
 		}
 	}
+
 	@media screen and (min-width: 596px) {
 		.setting {
 			width: 296px;
 		}
 	}
+
 	@media screen and (min-width: 768px) {
 		.setting {
 			width: 396px;
+		}
+	}
+
+	@media (prefers-color-scheme: dark) {
+		.setting {
+			background: rgba(64, 64, 64, 0.45);
+			&__divisor {
+				background: var.$color-white;
+			}
+			&__btnTheme {
+				&-isActive {
+					border: 3px solid var.$color-yellow;
+					background: var.$color-black;
+				}
+			}
+			&__reset {
+				color: var.$color-black;
+				background: var.$color-yellow;
+			}
+		}
+	}
+
+	:global(body.dark) {
+		.setting {
+			background: rgba(64, 64, 64, 0.45);
+			&__divisor {
+				background: var.$color-white;
+			}
+			&__btnTheme {
+				&-isActive {
+					border: 3px solid var.$color-yellow;
+					background: var.$color-black;
+				}
+			}
+			&__reset {
+				color: var.$color-black;
+				background: var.$color-yellow;
+			}
 		}
 	}
 </style>
