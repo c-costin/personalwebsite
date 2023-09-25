@@ -1,9 +1,9 @@
 import type { Session } from 'svelte-kit-cookie-session';
 
 type SessionData = {
-	theme: string,
-	fontSize: number,
-	interlineSize: number
+	theme: ?string,
+	fontSize: ?number,
+	interlineSize: ?number
 };
 
 // See https://kit.svelte.dev/docs/types#app

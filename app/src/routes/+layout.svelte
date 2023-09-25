@@ -20,7 +20,7 @@
 
 	// Declare export variable
 	export let data: LayoutServerData;
-	$: console.log(data.session.theme);
+	$: console.log(data.session);
 
 	// Declare variable
 	let isPageLaoded: Boolean = false;

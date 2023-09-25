@@ -71,6 +71,7 @@
 	@use '../../styles/variables' as var;
 
 	.navbar {
+		z-index: 99999;
 		position: fixed;
 		top: 1.5rem;
 		left: 50%;
