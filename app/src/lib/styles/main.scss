@@ -7,18 +7,36 @@ body {
 	flex-direction: column;
 	justify-content: space-between;
 	font-family: var.$font-montserrat;
-	color: var.$color-black;
-	background: var.$color-white;
 	overflow-y: scroll;
 	scroll-behavior: smooth;
 	-webkit-overflow-scrolling: smooth;
 	transition: all 0.8s;
 }
 
+body.light {
+	color: var.$color-black;
+	background: var.$color-white;
+}
+
 body.dark {
 	color: var.$color-white;
 	background: var.$color-black;
 }
+
+@media (prefers-color-scheme: light) {
+	body {
+		color: var.$color-black;
+		background: var.$color-white;
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	body {
+		color: var.$color-white;
+		background: var.$color-black;
+	}
+}
+
 
 .container {
 	margin-inline: auto;
@@ -39,9 +57,3 @@ body.dark {
 	}
 }
 
-@media (prefers-color-scheme: dark) {
-	body {
-		color: var.$color-white;
-		background: var.$color-black;
-	}
-}

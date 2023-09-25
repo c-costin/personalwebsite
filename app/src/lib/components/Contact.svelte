@@ -31,7 +31,15 @@
 		}
 	}
 
-	@media (prefers-color-scheme: dark) {
+	:global(body.light) {
+		.contact {
+			&__mark {
+				color: var.$color-blue;
+			}
+		}
+	}
+
+	:global(body.dark) {
 		.contact {
 			&__mark {
 				color: var.$color-yellow;
@@ -39,7 +47,15 @@
 		}
 	}
 
-	:global(body.dark) {
+	@media (prefers-color-scheme: light) {
+		.contact {
+			&__mark {
+				color: var.$color-blue;
+			}
+		}
+	}
+
+	@media (prefers-color-scheme: dark) {
 		.contact {
 			&__mark {
 				color: var.$color-yellow;

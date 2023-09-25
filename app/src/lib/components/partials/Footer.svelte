@@ -48,7 +48,6 @@
 		align-items: center;
 		&__name {
 			&:hover {
-				color: var.$color-blue;
 				text-decoration: underline;
 			}
 		}
@@ -59,13 +58,30 @@
 		gap: 1rem;
 		&__link {
 			&:hover {
-				color: var.$color-blue;
 				text-decoration: underline;
 			}
 		}
 	}
 
-	@media (prefers-color-scheme: dark) {
+	:global(body.light) {
+		.creator {
+			&__name {
+				&:hover {
+					color: var.$color-blue;
+				}
+			}
+		}
+
+		.soc {
+			&__link {
+				&:hover {
+					color: var.$color-blue;
+				}
+			}
+		}
+	}
+
+	:global(body.dark) {
 		.creator {
 			&__name {
 				&:hover {
@@ -83,7 +99,25 @@
 		}
 	}
 
-	:global(body.dark) {
+	@media (prefers-color-scheme: light) {
+		.creator {
+			&__name {
+				&:hover {
+					color: var.$color-blue;
+				}
+			}
+		}
+
+		.soc {
+			&__link {
+				&:hover {
+					color: var.$color-blue;
+				}
+			}
+		}
+	}
+
+	@media (prefers-color-scheme: dark) {
 		.creator {
 			&__name {
 				&:hover {

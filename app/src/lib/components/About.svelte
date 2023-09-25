@@ -80,7 +80,15 @@
 		}
 	}
 
-	@media (prefers-color-scheme: dark) {
+	:global(body.light) {
+		.about {
+			&__link {
+				color: var.$color-blue;
+			}
+		}
+	}
+
+	:global(body.dark) {
 		.about {
 			&__link {
 				color: var.$color-yellow;
@@ -88,7 +96,15 @@
 		}
 	}
 
-	:global(body.dark) {
+	@media (prefers-color-scheme: light) {
+		.about {
+			&__link {
+				color: var.$color-blue;
+			}
+		}
+	}
+
+	@media (prefers-color-scheme: dark) {
 		.about {
 			&__link {
 				color: var.$color-yellow;

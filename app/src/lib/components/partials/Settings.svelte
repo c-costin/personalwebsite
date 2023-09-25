@@ -166,7 +166,26 @@
 		}
 	}
 
-	@media (prefers-color-scheme: dark) {
+	:global(body.light) {
+		.setting {
+			background: rgba(232, 229, 228, 0.45);
+			&__divisor {
+				background: var.$color-black;
+			}
+			&__btnTheme {
+				&-isActive {
+					color: var.$color-white;
+					background: var.$color-blue;
+				}
+			}
+			&__reset {
+				color: var.$color-white;
+				background: var.$color-blue;
+			}
+		}
+	}
+
+	:global(body.dark) {
 		.setting {
 			background: rgba(64, 64, 64, 0.45);
 			&__divisor {
@@ -185,7 +204,26 @@
 		}
 	}
 
-	:global(body.dark) {
+	@media (prefers-color-scheme: light) {
+		.setting {
+			background: rgba(232, 229, 228, 0.45);
+			&__divisor {
+				background: var.$color-black;
+			}
+			&__btnTheme {
+				&-isActive {
+					color: var.$color-white;
+					background: var.$color-blue;
+				}
+			}
+			&__reset {
+				color: var.$color-white;
+				background: var.$color-blue;
+			}
+		}
+	}
+
+	@media (prefers-color-scheme: dark) {
 		.setting {
 			background: rgba(64, 64, 64, 0.45);
 			&__divisor {

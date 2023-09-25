@@ -76,7 +76,17 @@
 		}
 	}
 
-	@media (prefers-color-scheme: dark) {
+	:global(body.dark) {
+		.project {
+			&__item {
+				&:hover {
+					color: var.$color-blue;
+				}
+			}
+		}
+	}
+
+	:global(body.dark) {
 		.project {
 			&__item {
 				&:hover {
@@ -86,7 +96,17 @@
 		}
 	}
 
-	:global(body.dark) {
+	@media (prefers-color-scheme: light) {
+		.project {
+			&__item {
+				&:hover {
+					color: var.$color-blue;
+				}
+			}
+		}
+	}
+
+	@media (prefers-color-scheme: dark) {
 		.project {
 			&__item {
 				&:hover {

@@ -21,7 +21,15 @@
 		}
 	}
 
-	@media (prefers-color-scheme: dark) {
+	:global(body.light) {
+		.hero {
+			&__mark {
+				color: var.$color-blue;
+			}
+		}
+	}
+
+	:global(body.dark) {
 		.hero {
 			&__mark {
 				color: var.$color-yellow;
@@ -29,7 +37,15 @@
 		}
 	}
 
-	:global(body.dark) {
+	@media (prefers-color-scheme: light) {
+		.hero {
+			&__mark {
+				color: var.$color-blue;
+			}
+		}
+	}
+
+	@media (prefers-color-scheme: dark) {
 		.hero {
 			&__mark {
 				color: var.$color-yellow;
