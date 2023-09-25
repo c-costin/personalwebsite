@@ -6,7 +6,7 @@
 			<div class="study__desc">
 				<p class="study__name"><em>O'Clock</em></p>
 				<p class="study__date">
-					<time datetime="2022-11">Novembre</time> à <time datetime="2023-05">Avril 2023</time>
+					<time datetime="2022-11">Novembre 2022</time> à <time datetime="2023-05">Avril 2023</time>
 				</p>
 			</div>
 		</li>
@@ -15,7 +15,7 @@
 			<div class="study__desc">
 				<p class="study__name"><em>Armée de l'air</em></p>
 				<p class="study__date">
-					<time datetime="2017-02">Février</time> à <time datetime="2017-05">Mai 2017</time>
+					<time datetime="2017-02">Février</time> à <time datetime="2017-05">Juin 2017</time>
 				</p>
 			</div>
 		</li>

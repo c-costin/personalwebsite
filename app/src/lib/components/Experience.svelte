@@ -2,17 +2,17 @@
 	<h2 class="experience__title">Expériences</h2>
 	<ul class="experience__list">
 		<li class="experience__item">
-			<h3 class="experience__job">Développeur web</h3>
+			<h3 class="experience__job">Stage - Développeur web</h3>
 			<div class="experience__desc">
 				<p class="experience__name"><em>GaraLib</em></p>
 				<p class="experience__date"><time datetime="2022-05">Mai 2023</time></p>
 			</div>
 		</li>
 		<li class="experience__item">
-			<h3 class="experience__job">Développeur web</h3>
+			<h3 class="experience__job">Freelance - Développeur web</h3>
 			<div class="experience__desc">
 				<p class="experience__name"><em>Cadeau des Toits</em></p>
-				<p class="experience__date"><time datetime="2021-06">Juin 2022</time></p>
+				<p class="experience__date"><time datetime="2021-05">Mai</time> à <time datetime="2021-06">Juin 2022</time></p>
 			</div>
 		</li>
 		<li class="experience__item">
