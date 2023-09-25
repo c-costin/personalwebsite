@@ -85,4 +85,14 @@
 			}
 		}
 	}
+
+	:global(body.dark) {
+		.project {
+			&__item {
+				&:hover {
+					color: var.$color-yellow;
+				}
+			}
+		}
+	}
 </style>

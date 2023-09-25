@@ -1,16 +1,20 @@
 <script lang="ts">
+	// Import generals style
 	import '$lib/styles/main.scss';
 
+	// Import modules
 	import { fade } from 'svelte/transition';
+	import { browser } from '$app/environment';
+	import { createEventDispatcher } from 'svelte';
+	import { enhance } from '$app/forms';
 
-	export let isThemeDark: Boolean = false;
-	export let fontSize: Number = 15;
+	// Declare export variables
+	export let isDarkTheme: Boolean = false;
+	export let fontSize: Number = 16;
 	export let interlineSize: Number = 1.5;
 
-	const changeTheme = () => {
-		window.document.body.classList.toggle('dark')
-		isThemeDark = !isThemeDark;
-	};
+	const dispatch = createEventDispatcher();
+
 	const reset = () => {
 		fontSize = 16;
 		interlineSize = 1.5;
@@ -47,15 +51,15 @@
 		</div>
 		<div class="setting__themeChoice">
 			<button
-				on:click={changeTheme}
-				class="setting__btnTheme {!isThemeDark ? 'setting__btnTheme-isActive' : ''}"
+				on:click={() => dispatch('changeThemeLight')}
+				class="setting__btnTheme {!isDarkTheme ? 'setting__btnTheme-isActive' : ''}"
 			>
 				clair
 			</button>
 			<div class="setting__divisor" />
 			<button
-				on:click={changeTheme}
-				class="setting__btnTheme {isThemeDark ? 'setting__btnTheme-isActive' : ''}"
+				on:click={() => dispatch('changeThemeDark')}
+				class="setting__btnTheme {isDarkTheme ? 'setting__btnTheme-isActive' : ''}"
 			>
 				sombre
 			</button>
@@ -132,12 +136,11 @@
 			padding-block: 0.25rem;
 			width: 50%;
 			border-radius: 0.5rem;
-			border: 3px solid transparent;
 			background: none;
 			font-family: var.$font-montserrat-semi;
 			&-isActive {
-				border: 3px solid var.$color-blue;
-				background: var.$color-white;
+				color: var.$color-white;
+				background: var.$color-blue;
 			}
 		}
 		&__reset {
@@ -171,8 +174,8 @@
 			}
 			&__btnTheme {
 				&-isActive {
-					border: 3px solid var.$color-yellow;
-					background: var.$color-black;
+					color: var.$color-black;
+					background: var.$color-yellow;
 				}
 			}
 			&__reset {
@@ -190,8 +193,8 @@
 			}
 			&__btnTheme {
 				&-isActive {
-					border: 3px solid var.$color-yellow;
-					background: var.$color-black;
+					color: var.$color-black;
+					background: var.$color-yellow;
 				}
 			}
 			&__reset {

@@ -42,4 +42,12 @@
 			}
 		}
 	}
+
+	:global(body.dark) {
+		.contact {
+			&__mark {
+				color: var.$color-yellow;
+			}
+		}
+	}
 </style>

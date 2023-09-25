@@ -1,7 +1,8 @@
 <header class="hero">
 	<h1 class="hero__title">
 		Bonjour, je suis Costin, un <span class="hero__mark">artisan du web</span>. Je conçois et
-		développe des applications pour le web, de manière <span class="hero__mark">responsable</span> et
+		développe des applications pour le web, de manière <span class="hero__mark">responsable</span>
+		et
 		<span class="hero__mark">accessible</span>.
 	</h1>
 </header>
@@ -21,6 +22,14 @@
 	}
 
 	@media (prefers-color-scheme: dark) {
+		.hero {
+			&__mark {
+				color: var.$color-yellow;
+			}
+		}
+	}
+
+	:global(body.dark) {
 		.hero {
 			&__mark {
 				color: var.$color-yellow;

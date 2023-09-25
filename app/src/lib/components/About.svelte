@@ -87,4 +87,12 @@
 			}
 		}
 	}
+
+	:global(body.dark) {
+		.about {
+			&__link {
+				color: var.$color-yellow;
+			}
+		}
+	}
 </style>

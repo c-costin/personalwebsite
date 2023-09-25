@@ -16,19 +16,36 @@
 
 	// Import type
 	import type { LayoutServerData } from './$types';
+	import { browser } from '$app/environment';
 
 	// Declare export variable
 	export let data: LayoutServerData;
+	$: console.log(data.session.theme);
 
 	// Declare variable
 	let isPageLaoded: Boolean = false;
 	let isSettingOpen: Boolean = false;
 	let isDark: Boolean;
 
-	if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-		window.document.body.classList.toggle('dark');
-		isDark = true;
+	// Check user prefers colors
+	if (browser) {
+		if (data.session.theme === 'dark' || window.matchMedia('(prefers-color-scheme: dark)').matches) {
+			document.body.classList.add('dark');
+			isDark = true;
+		}
 	}
+
+	// Declare functions
+	const onChangeThemeLight = async () => {
+		document.body.classList.remove('dark');
+		data.session.theme = 'light';
+		isDark = false;
+	};
+	const onChangeThemeDark = async () => {
+		document.body.classList.add('dark');
+		data.session.theme = 'dark';
+		isDark = true;
+	};
 
 	// Declare functions
 	onMount(() => {
@@ -51,7 +68,7 @@
 		/>
 
 		{#if isSettingOpen}
-			<Settings isThemeDark={isDark} />
+			<Settings on:changeThemeLight={onChangeThemeLight} on:changeThemeDark={onChangeThemeDark} isDarkTheme={isDark} />
 		{/if}
 
 		{#key data.pathname}
