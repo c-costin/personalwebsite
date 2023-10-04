@@ -46,6 +46,10 @@
 		display: flex;
 		gap: 0.5rem;
 		align-items: center;
+		&__logo {
+			width: 18px;
+			height: 18px;
+		}
 		&__name {
 			&:hover {
 				text-decoration: underline;

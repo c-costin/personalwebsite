@@ -39,6 +39,7 @@
 	<button
 		class="navbar__setting {openSetting ? 'navbar__link-isActive' : ''}"
 		on:click={() => dispatch('openSetting')}
+		aria-label="Bouton pour ouvrir les paramètres"
 	>
 		<svg
 			width="24px"
