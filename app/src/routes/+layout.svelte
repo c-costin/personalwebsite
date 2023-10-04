@@ -8,7 +8,7 @@
 	import Footer from '$lib/components/partials/Footer.svelte';
 
 	// Import assets
-	import logoNormal from '$lib/images/logo_normal.png';
+	import logoNormal from '$lib/images/logo_normal.webp';
 
 	// Import module
 	import { onMount } from 'svelte';

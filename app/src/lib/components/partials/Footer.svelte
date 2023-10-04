@@ -3,7 +3,7 @@
 	import '$lib/styles/main.scss';
 
 	// Import assets
-	import logo from '$lib/images/logo_small.png';
+	import logo from '$lib/images/logo_small.webp';
 </script>
 
 <footer class="footer">

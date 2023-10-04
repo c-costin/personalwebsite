@@ -1,5 +1,5 @@
 <script>
-	import me from '$lib/images/me.jpg';
+	import me from '$lib/images/me.webp';
 </script>
 
 <section class="about">
@@ -55,8 +55,10 @@
 		align-items: center;
 		gap: 4rem;
 		&__img {
-			width: 12rem;
+			width: 196px;
+			height: 212px;
 			border-radius: 0.5rem;
+			object-fit: cover;
 		}
 		&__desc {
 			display: flex;
