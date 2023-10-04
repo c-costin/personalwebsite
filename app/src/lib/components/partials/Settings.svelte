@@ -6,19 +6,14 @@
 	import { fade } from 'svelte/transition';
 	import { createEventDispatcher } from 'svelte';
 
-	// Declare export variables
+	// Exporting variables
 	export let isDarkTheme: Boolean = false;
 	export let fontSize: Number = 16;
-	export let interlineSize: Number = 1.5;
 
+	// Functions
 	const dispatch = createEventDispatcher();
-
-	const onChangeValue = (e: SubmitEvent) => {
-		console.log(e.target.value);
-	}
-	const reset = () => {
+	$: reset = () => {
 		fontSize = 16;
-		interlineSize = 1.5;
 	};
 </script>
 
@@ -31,23 +26,6 @@
 			<p>{fontSize}</p>
 		</div>
 		<input class="setting__input" type="range" bind:value={fontSize} min="12" max="24" step="2" />
-	</div>
-	<div class="setting__action">
-		<div class="setting__row">
-			<h3 class="setting__subTitle">Taille de l'interlignes</h3>
-			<p>{interlineSize}</p>
-		</div>
-		<form method="post" on:change={onChangeValue}>
-			<input
-				class="setting__input"
-				type="range"
-				name="interlineSize"
-				bind:value={interlineSize}
-				min="1.25"
-				max="2"
-				step="0.25"
-			/>
-		</form>
 	</div>
 	<div class="setting__action">
 		<div class="setting__row">

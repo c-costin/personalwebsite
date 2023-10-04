@@ -13,23 +13,24 @@
 	// Import module
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
+	import { browser } from '$app/environment';
 
 	// Import type
 	import type { LayoutServerData } from './$types';
-	import { browser } from '$app/environment';
 
 	// Declare export variable
 	export let data: LayoutServerData;
 	$: console.log(data.session);
 
 	// Declare variable
+	let theme: string = data.session.theme || '';
 	let isPageLaoded: Boolean = false;
 	let isSettingOpen: Boolean = false;
 	let isDark: Boolean;
 
 	// Check user prefers colors
 	if (browser) {
-		if (data.session.theme === 'dark' || window.matchMedia('(prefers-color-scheme: dark)').matches) {
+		if (theme === 'dark' || window.matchMedia('(prefers-color-scheme: dark)').matches) {
 			document.body.classList.add('dark');
 			isDark = true;
 		} else {
@@ -38,7 +39,16 @@
 		}
 	}
 
+	// Variables
+	let changeFontSize: number;
+	let changeInterlineSize: number;
+
 	// Declare functions
+	onMount(() => {
+		setTimeout(() => {
+			isPageLaoded = true;
+		}, 1200);
+	});
 	const onChangeThemeLight = async () => {
 		document.body.classList.toggle('light');
 		document.body.classList.toggle('dark');
@@ -52,12 +62,10 @@
 		isDark = true;
 	};
 
-	// Declare functions
-	onMount(() => {
-		setTimeout(() => {
-			isPageLaoded = true;
-		}, 1200);
-	});
+	// Handle statement
+	$: if (changeFontSize !== undefined) {
+		document.body.dataset.font = `${changeFontSize}`;
+	}
 </script>
 
 {#if !isPageLaoded}
@@ -73,7 +81,13 @@
 		/>
 
 		{#if isSettingOpen}
-			<Settings on:changeThemeLight={onChangeThemeLight} on:changeThemeDark={onChangeThemeDark} isDarkTheme={isDark} />
+			<Settings
+				bind:fontSize={changeFontSize}
+				bind:interlineSize={changeInterlineSize}
+				on:changeThemeLight={onChangeThemeLight}
+				on:changeThemeDark={onChangeThemeDark}
+				isDarkTheme={isDark}
+			/>
 		{/if}
 
 		{#key data.pathname}
