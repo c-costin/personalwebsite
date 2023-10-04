@@ -83,7 +83,6 @@
 		{#if isSettingOpen}
 			<Settings
 				bind:fontSize={changeFontSize}
-				bind:interlineSize={changeInterlineSize}
 				on:changeThemeLight={onChangeThemeLight}
 				on:changeThemeDark={onChangeThemeDark}
 				isDarkTheme={isDark}
