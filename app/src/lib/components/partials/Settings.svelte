@@ -1,21 +1,37 @@
 <script lang="ts">
+
 	// Import generals style
 	import '$lib/styles/main.scss';
 
 	// Import modules
+	import { page } from '$app/stores';
 	import { fade } from 'svelte/transition';
 	import { createEventDispatcher } from 'svelte';
 
+	let fontSize: number = $page.data.session.fontSize || 16;
+
 	// Exporting variables
 	export let isDarkTheme: Boolean = false;
-	export let fontSize: Number = 16;
 
 	// Functions
 	const dispatch = createEventDispatcher();
-	$: reset = () => {
+	const changeFontSizeIntoDom = () => {
+		document.body.dataset.font = `${fontSize}`;
+	}
+	const reset = async () => {
 		fontSize = 16;
+		await fetch('/actions?/resetSettings', {
+			method: 'POST',
+			headers: {
+				Accept: '*/*',
+				'Content-Type': 'application/x-www-form-urlencoded'
+			}
+		});
 	};
+
 </script>
+
+<svelte:body data-font="{fontSize}" />
 
 <aside class="setting" transition:fade>
 	<h2 class="setting__title">Préférences</h2>
@@ -25,7 +41,27 @@
 			<h3 class="setting__subTitle">Taille du texte</h3>
 			<p>{fontSize}</p>
 		</div>
-		<input class="setting__input" type="range" bind:value={fontSize} min="12" max="24" step="2" />
+		<input
+			class="setting__input"
+			type="range"
+			bind:value={fontSize}
+			on:change={async () => {
+				await fetch('/actions?/selectFontSize', {
+					method: 'POST',
+					headers: {
+						Accept: '*/*',
+						'Content-Type': 'application/x-www-form-urlencoded'
+					},
+					body: new URLSearchParams({
+						fontSize: `${fontSize}`
+					})
+				});
+				changeFontSizeIntoDom();
+			}}
+			min="12"
+			max="24"
+			step="2"
+		/>
 	</div>
 	<div class="setting__action">
 		<div class="setting__row">
@@ -33,14 +69,38 @@
 		</div>
 		<div class="setting__themeChoice">
 			<button
-				on:click={() => dispatch('changeThemeLight')}
+				on:click={async () => {
+					dispatch('changeThemeLight');
+					await fetch('/actions?/selectTheme', {
+						method: 'POST',
+						headers: {
+							Accept: '*/*',
+							'Content-Type': 'application/x-www-form-urlencoded'
+						},
+						body: new URLSearchParams({
+							theme: 'light'
+						})
+					});
+				}}
 				class="setting__btnTheme {!isDarkTheme ? 'setting__btnTheme-isActive' : ''}"
 			>
 				clair
 			</button>
 			<div class="setting__divisor" />
 			<button
-				on:click={() => dispatch('changeThemeDark')}
+				on:click={async () => {
+					dispatch('changeThemeDark');
+					await fetch('/actions?/selectTheme', {
+						method: 'POST',
+						headers: {
+							Accept: '*/*',
+							'Content-Type': 'application/x-www-form-urlencoded'
+						},
+						body: new URLSearchParams({
+							theme: 'dark'
+						})
+					});
+				}}
 				class="setting__btnTheme {isDarkTheme ? 'setting__btnTheme-isActive' : ''}"
 			>
 				sombre

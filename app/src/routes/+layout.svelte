@@ -20,34 +20,20 @@
 
 	// Declare export variable
 	export let data: LayoutServerData;
-	$: console.log(data.session);
 
 	// Declare variable
-	let theme: string = data.session.theme || '';
+	let theme: String = data.session.theme || '';
+	let fontSize: Number = data.session.fontSize || 16;
 	let isPageLaoded: Boolean = false;
 	let isSettingOpen: Boolean = false;
 	let isDark: Boolean;
-
-	// Check user prefers colors
-	if (browser) {
-		if (theme === 'dark' || window.matchMedia('(prefers-color-scheme: dark)').matches) {
-			document.body.classList.add('dark');
-			isDark = true;
-		} else {
-			document.body.classList.add('light');
-			isDark = false;
-		}
-	}
-
-	// Variables
-	let changeFontSize: number;
-	let changeInterlineSize: number;
 
 	// Declare functions
 	onMount(() => {
 		setTimeout(() => {
 			isPageLaoded = true;
 		}, 1200);
+		document.body.dataset.font = `${fontSize}`;
 	});
 	const onChangeThemeLight = async () => {
 		document.body.classList.toggle('light');
@@ -63,8 +49,17 @@
 	};
 
 	// Handle statement
-	$: if (changeFontSize !== undefined) {
-		document.body.dataset.font = `${changeFontSize}`;
+	$: if (browser) {
+		if (
+			(theme !== '' && theme !== 'dark') ||
+			!window.matchMedia('(prefers-color-scheme: dark)').matches
+		) {
+			document.body.classList.add('light');
+			isDark = false;
+		} else {
+			document.body.classList.add('dark');
+			isDark = true;
+		}
 	}
 </script>
 
@@ -82,7 +77,6 @@
 
 		{#if isSettingOpen}
 			<Settings
-				bind:fontSize={changeFontSize}
 				on:changeThemeLight={onChangeThemeLight}
 				on:changeThemeDark={onChangeThemeDark}
 				isDarkTheme={isDark}

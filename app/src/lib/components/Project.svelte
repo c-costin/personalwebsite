@@ -76,7 +76,7 @@
 		}
 	}
 
-	:global(body.dark) {
+	:global(body.light) {
 		.project {
 			&__item {
 				&:hover {
