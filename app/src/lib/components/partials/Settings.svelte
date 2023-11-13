@@ -7,6 +7,7 @@
 	import { page } from '$app/stores';
 	import { fade } from 'svelte/transition';
 	import { createEventDispatcher } from 'svelte';
+	import { goto } from '$app/navigation';
 
 	let fontSize: number = $page.data.session.fontSize || 16;
 
@@ -19,7 +20,16 @@
 		document.body.dataset.font = `${fontSize}`;
 	}
 	const reset = async () => {
+		const thisPage = window.location.pathname;
+
 		fontSize = 16;
+
+		if (!window.matchMedia('(prefers-color-scheme: dark)').matches) {
+			isDarkTheme = false;
+		} else {
+			isDarkTheme = true;
+		}
+
 		await fetch('/actions?/resetSettings', {
 			method: 'POST',
 			headers: {
@@ -27,6 +37,8 @@
 				'Content-Type': 'application/x-www-form-urlencoded'
 			}
 		});
+
+		await goto(thisPage);
 	};
 
 </script>
