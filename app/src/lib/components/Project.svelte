@@ -2,9 +2,9 @@
 	<h2 class="project__title">Projets</h2>
 	<ul class="project__list">
 		<li class="project__item">
-			<h3 class="project__name">eCommerce - C-Studio (en cours)</h3>
+			<h3 class="project__name">eCommerce - cStudio</h3>
 			<a
-				href="https://github.com/costin-projects/project-c-studio"
+				href="https://github.com/c-costin/project-cstudio"
 				target="_blank"
 				rel="noopener noreferrer"
 				class="project__link"
@@ -13,9 +13,9 @@
 			</a>
 		</li>
 		<li class="project__item">
-			<h3 class="project__name">Site web personnel</h3>
+			<h3 class="project__name">Site personnel</h3>
 			<a
-				href="https://github.com/c-costin/project-personal-website"
+				href="https://github.com/c-costin/project-personalwebsite"
 				target="_blank"
 				rel="noopener noreferrer"
 				class="project__link"
@@ -24,9 +24,9 @@
 			</a>
 		</li>
 		<li class="project__item">
-			<h3 class="project__name">API - GaraLib</h3>
+			<h3 class="project__name">Support/API - GaraLib</h3>
 			<a
-				href="https://dwwm.back.costincadeau.fr/api/doc"
+				href="https://github.com/c-costin/app-back-garalib"
 				target="_blank"
 				rel="noopener noreferrer"
 				class="project__link"
