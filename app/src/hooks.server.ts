@@ -1,4 +1,5 @@
 import { handleSession } from 'svelte-kit-cookie-session';
+import { SECRET_SESSION_1, SECRET_SESSION_2 } from '$env/static/private';
 
 export const handle = handleSession(
 	{
@@ -8,11 +9,11 @@ export const handle = handleSession(
 		secret: [
 			{
 				id: 2,
-				secret: 'X2i5tj07c93gbyVtdXMb5F6vc0sEfe9D'
+				secret: SECRET_SESSION_2
 			},
 			{
 				id: 1,
-				secret: 'aP3PnY82PiYw1n0d1wtoApJvEEJYF5tf'
+				secret: SECRET_SESSION_1
 			}
 		]
 	},
