@@ -38,7 +38,7 @@
 			}
 		});
 
-		await goto(thisPage);
+		location.reload();
 	};
 
 </script>
