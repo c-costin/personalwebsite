@@ -1,5 +1,5 @@
 import { vitePreprocess } from '@sveltejs/kit/vite';
-import adapter from '@sveltejs/adapter-static';
+import adapter from '@sveltejs/adapter-node';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -7,7 +7,10 @@ const config = {
 
 	kit: {
 		adapter: adapter({
-			fallback: 'index.html',
+			out: 'build',
+			precompress: true,
+			envPrefix: 'SERVER_',
+			polyfill: true
 		})
 	}
 };
