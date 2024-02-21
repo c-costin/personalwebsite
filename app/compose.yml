@@ -1,0 +1,8 @@
+name: personalwebsite
+
+services:
+
+  web:
+    build: ./
+    ports:
+      - '58000:3000'
