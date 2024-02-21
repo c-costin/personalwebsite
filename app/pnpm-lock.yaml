@@ -494,15 +494,7 @@ packages:
       rollup: 3.29.4
     dev: true
 
-  /@sveltejs/adapter-static@2.0.3(@sveltejs/kit@1.27.6):
-    resolution: {integrity: sha512-VUqTfXsxYGugCpMqQv1U0LIdbR3S5nBkMMDmpjGVJyM6Q2jHVMFtdWJCkeHMySc6mZxJ+0eZK3T7IgmUCDrcUQ==}
-    peerDependencies:
-      '@sveltejs/kit': ^1.5.0
-    dependencies:
-      '@sveltejs/kit': 1.27.6(svelte@4.2.7)(vite@4.5.0)
-    dev: true
-
-  /@sveltejs/kit@1.27.6(svelte@4.2.7)(vite@4.5.0):
+  /@sveltejs/kit@1.27.6(svelte@4.2.7)(vite@4.5.2):
     resolution: {integrity: sha512-GsjTkMbKzXdbeRg0tk8S7HNShQ4879ftRr0ZHaZfjbig1xQwG57Bvcm9U9/mpLJtCapLbLWUnygKrgcLISLC8A==}
     engines: {node: ^16.14 || >=18}
     hasBin: true
