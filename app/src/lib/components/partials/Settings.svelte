@@ -18,26 +18,26 @@
 	// Functions
 	const changeFontSizeIntoDom = () => {
 		document.body.dataset.font = `${fontSize}`;
-		document.cookie = `fontSize=${fontSize};doamin=costincadeau.fr;max-age=${60*60*24*90};SameSite=strict;Secure;`;
+		document.cookie = `fontSize=${fontSize};domain=costincadeau.fr;max-age=${60*60*24*90};SameSite=strict;Secure;`;
 	};
 
 	const changeThemeLight = async () => {
 		document.body.classList.add('light');
 		document.body.classList.remove('dark');
 		isDarkTheme = false;
-		document.cookie = `theme=light;doamin=costincadeau.fr;max-age=${60*60*24*90};SameSite=strict;Secure;`;
+		document.cookie = `theme=light;domain=costincadeau.fr;max-age=${60*60*24*90};SameSite=strict;Secure;`;
 	};
 
 	const changeThemeDark = async () => {
 		document.body.classList.add('dark');
 		document.body.classList.remove('light');
 		isDarkTheme = true;
-		document.cookie = `theme=dark;doamin=costincadeau.fr;max-age=${60*60*24*90};SameSite=strict;Secure;`;
+		document.cookie = `theme=dark;domain=costincadeau.fr;max-age=${60*60*24*90};SameSite=strict;Secure;`;
 	};
 
 	const resetSetting = () => {
-		document.cookie = `theme=light;doamin=costincadeau.fr;max-age=0;SameSite=strict;Secure;`;
-		document.cookie = `theme=dark;doamin=costincadeau.fr;max-age=0;SameSite=strict;Secure;`;
+		document.cookie = `theme=light;domain=costincadeau.fr;max-age=0;SameSite=strict;Secure;`;
+		document.cookie = `theme=dark;domain=costincadeau.fr;max-age=0;SameSite=strict;Secure;`;
 
 		if (!window.matchMedia('(prefers-color-scheme: dark)').matches) {
 			document.body.classList.add('light');
@@ -51,7 +51,7 @@
 			isDarkTheme = true;
 		}
 
-		document.cookie = `fontSize=${fontSize};doamin=costincadeau.fr;max-age=0;SameSite=strict;Secure;`;
+		document.cookie = `fontSize=${fontSize};domain=costincadeau.fr;max-age=0;SameSite=strict;Secure;`;
 		fontSize = 16;
 		document.body.dataset.font = `${fontSize}`;
 	}
