@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
+
 	// Import generals style
 	import '$lib/styles/main.scss';
 
@@ -16,22 +18,43 @@
 	// Functions
 	const changeFontSizeIntoDom = () => {
 		document.body.dataset.font = `${fontSize}`;
-		document.cookie = `fontSize=${fontSize}`;
+		document.cookie = `fontSize=${fontSize};doamin=costincadeau.fr;max-age=${60*60*24*90};SameSite=strict;Secure;`;
 	};
 
 	const changeThemeLight = async () => {
-		document.body.classList.toggle('light');
-		document.body.classList.toggle('dark');
-		document.cookie = `theme=light`;
+		document.body.classList.add('light');
+		document.body.classList.remove('dark');
 		isDarkTheme = false;
+		document.cookie = `theme=light;doamin=costincadeau.fr;max-age=${60*60*24*90};SameSite=strict;Secure;`;
 	};
 
 	const changeThemeDark = async () => {
-		document.body.classList.toggle('dark');
-		document.body.classList.toggle('light');
-		document.cookie = `theme=dark`;
+		document.body.classList.add('dark');
+		document.body.classList.remove('light');
 		isDarkTheme = true;
+		document.cookie = `theme=dark;doamin=costincadeau.fr;max-age=${60*60*24*90};SameSite=strict;Secure;`;
 	};
+
+	const resetSetting = () => {
+		document.cookie = `theme=light;doamin=costincadeau.fr;max-age=0;SameSite=strict;Secure;`;
+		document.cookie = `theme=dark;doamin=costincadeau.fr;max-age=0;SameSite=strict;Secure;`;
+
+		if (!window.matchMedia('(prefers-color-scheme: dark)').matches) {
+			document.body.classList.add('light');
+			document.body.classList.remove('dark');
+			document.body.dataset.theme = 'light';
+			isDarkTheme = false;
+		} else {
+			document.body.classList.add('dark');
+			document.body.classList.toggle('light');
+			document.body.dataset.theme = 'dark';
+			isDarkTheme = true;
+		}
+
+		document.cookie = `fontSize=${fontSize};doamin=costincadeau.fr;max-age=0;SameSite=strict;Secure;`;
+		fontSize = 16;
+		document.body.dataset.font = `${fontSize}`;
+	}
 </script>
 
 <svelte:body data-font={fontSize} />
@@ -74,7 +97,7 @@
 			</button>
 		</div>
 	</div>
-	<button class="setting__reset"> Remettre par défaut </button>
+	<button class="setting__reset" on:click={resetSetting}> Remettre par défaut </button>
 </aside>
 
 <style lang="scss">
