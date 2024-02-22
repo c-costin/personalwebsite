@@ -1,49 +1,40 @@
 <script lang="ts">
-
 	// Import generals style
 	import '$lib/styles/main.scss';
 
 	// Import modules
-	import { page } from '$app/stores';
 	import { fade } from 'svelte/transition';
-	import { createEventDispatcher } from 'svelte';
-	import { goto } from '$app/navigation';
 
-	let fontSize: number = $page.data.session.fontSize || 16;
-
+	
 	// Exporting variables
 	export let isDarkTheme: Boolean = false;
 
+	// Variables
+	const cookies = Object.fromEntries(new URLSearchParams(document.cookie.replace(/; /g, '&')));
+	let fontSize: number = Number(cookies.fontSize) || 16;
+
 	// Functions
-	const dispatch = createEventDispatcher();
 	const changeFontSizeIntoDom = () => {
 		document.body.dataset.font = `${fontSize}`;
-	}
-	const reset = async () => {
-		const thisPage = window.location.pathname;
-
-		fontSize = 16;
-
-		if (!window.matchMedia('(prefers-color-scheme: dark)').matches) {
-			isDarkTheme = false;
-		} else {
-			isDarkTheme = true;
-		}
-
-		await fetch('/actions?/resetSettings', {
-			method: 'POST',
-			headers: {
-				Accept: '*/*',
-				'Content-Type': 'application/x-www-form-urlencoded'
-			}
-		});
-
-		location.reload();
+		document.cookie = `fontSize=${fontSize}`;
 	};
 
+	const changeThemeLight = async () => {
+		document.body.classList.toggle('light');
+		document.body.classList.toggle('dark');
+		document.cookie = `theme=light`;
+		isDarkTheme = false;
+	};
+
+	const changeThemeDark = async () => {
+		document.body.classList.toggle('dark');
+		document.body.classList.toggle('light');
+		document.cookie = `theme=dark`;
+		isDarkTheme = true;
+	};
 </script>
 
-<svelte:body data-font="{fontSize}" />
+<svelte:body data-font={fontSize} />
 
 <aside class="setting" transition:fade>
 	<h2 class="setting__title">Préférences</h2>
@@ -57,19 +48,7 @@
 			class="setting__input"
 			type="range"
 			bind:value={fontSize}
-			on:change={async () => {
-				await fetch('/actions?/selectFontSize', {
-					method: 'POST',
-					headers: {
-						Accept: '*/*',
-						'Content-Type': 'application/x-www-form-urlencoded'
-					},
-					body: new URLSearchParams({
-						fontSize: `${fontSize}`
-					})
-				});
-				changeFontSizeIntoDom();
-			}}
+			on:change={changeFontSizeIntoDom}
 			min="12"
 			max="24"
 			step="2"
@@ -81,45 +60,21 @@
 		</div>
 		<div class="setting__themeChoice">
 			<button
-				on:click={async () => {
-					dispatch('changeThemeLight');
-					await fetch('/actions?/selectTheme', {
-						method: 'POST',
-						headers: {
-							Accept: '*/*',
-							'Content-Type': 'application/x-www-form-urlencoded'
-						},
-						body: new URLSearchParams({
-							theme: 'light'
-						})
-					});
-				}}
+				on:click={changeThemeLight}
 				class="setting__btnTheme {!isDarkTheme ? 'setting__btnTheme-isActive' : ''}"
 			>
 				clair
 			</button>
 			<div class="setting__divisor" />
 			<button
-				on:click={async () => {
-					dispatch('changeThemeDark');
-					await fetch('/actions?/selectTheme', {
-						method: 'POST',
-						headers: {
-							Accept: '*/*',
-							'Content-Type': 'application/x-www-form-urlencoded'
-						},
-						body: new URLSearchParams({
-							theme: 'dark'
-						})
-					});
-				}}
+				on:click={changeThemeDark}
 				class="setting__btnTheme {isDarkTheme ? 'setting__btnTheme-isActive' : ''}"
 			>
 				sombre
 			</button>
 		</div>
 	</div>
-	<button class="setting__reset" on:click={reset}> Remettre par défaut </button>
+	<button class="setting__reset"> Remettre par défaut </button>
 </aside>
 
 <style lang="scss">

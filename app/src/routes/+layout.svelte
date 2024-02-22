@@ -22,31 +22,19 @@
 	export let data: LayoutServerData;
 
 	// Declare variable
-	let theme: String = data.session.theme || '';
-	let fontSize: Number = data.session.fontSize || 16;
-	let isPageLaoded: Boolean = false;
-	let isSettingOpen: Boolean = false;
-	let isDark: Boolean;
+	let fontSize: number = data.userSaveFontSize;
+	let theme: string = data.userSaveTheme || '';
+	let isPageLaoded: boolean = false;
+	let isSettingOpen: boolean = false;
+	let isDark: boolean;
 
 	// Declare functions
 	onMount(() => {
 		setTimeout(() => {
 			isPageLaoded = true;
 		}, 1200);
-		document.body.dataset.font = `${fontSize}`;
+		document.body.dataset.font = String(fontSize);
 	});
-	const onChangeThemeLight = async () => {
-		document.body.classList.toggle('light');
-		document.body.classList.toggle('dark');
-		data.session.theme = 'light';
-		isDark = false;
-	};
-	const onChangeThemeDark = async () => {
-		document.body.classList.toggle('dark');
-		document.body.classList.toggle('light');
-		data.session.theme = 'dark';
-		isDark = true;
-	};
 
 	// Handle statement
 	$: if (browser) {
@@ -55,9 +43,11 @@
 			!window.matchMedia('(prefers-color-scheme: dark)').matches
 		) {
 			document.body.classList.add('light');
+			document.body.dataset.theme = 'light';
 			isDark = false;
 		} else {
 			document.body.classList.add('dark');
+			document.body.dataset.theme = 'dark';
 			isDark = true;
 		}
 	}
@@ -76,11 +66,7 @@
 		/>
 
 		{#if isSettingOpen}
-			<Settings
-				on:changeThemeLight={onChangeThemeLight}
-				on:changeThemeDark={onChangeThemeDark}
-				isDarkTheme={isDark}
-			/>
+			<Settings isDarkTheme={isDark} />
 		{/if}
 
 		{#key data.pathname}

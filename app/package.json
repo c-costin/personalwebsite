@@ -35,7 +35,5 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"dotenv": "^16.4.5",
-		"svelte-kit-cookie-session": "^4.0.0"
 	}
 }

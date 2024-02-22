@@ -1,8 +1,9 @@
 import type { LayoutServerLoad } from './$types';
 
-export const load: LayoutServerLoad = async ({ locals, url }) => {
+export const load: LayoutServerLoad = async ({ url, cookies }) => {
 	return {
-		session: locals.session.data,
-		pathname: url.pathname
+		pathname: url.pathname,
+		userSaveFontSize: Number(cookies.get('fontSize')) || 16,
+		userSaveTheme: cookies.get('theme') || null
 	};
 };

@@ -6,7 +6,7 @@
 </script>
 
 <svelte:head>
-	<title>Accueil - Costin Cadeau, développeur Web & Web Mobile</title>
+	<title>Accueil - Costin Cadeau, développeur web et web mobile</title>
 </svelte:head>
 
 <Hero />
