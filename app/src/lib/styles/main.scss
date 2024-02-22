@@ -1,0 +1,80 @@
+@use 'reset' as *;
+@use 'fonts' as *;
+@use 'variables' as var;
+
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	font-family: var.$font-montserrat;
+	overflow-y: scroll;
+	scroll-behavior: smooth;
+	-webkit-overflow-scrolling: smooth;
+	transition: all 0.8s;
+}
+
+body.light {
+	color: var.$color-black;
+	background: var.$color-white;
+}
+
+body.dark {
+	color: var.$color-white;
+	background: var.$color-black;
+}
+
+@media (prefers-color-scheme: light) {
+	body {
+		color: var.$color-black;
+		background: var.$color-white;
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	body {
+		color: var.$color-white;
+		background: var.$color-black;
+	}
+}
+
+body[data-font='12'] {
+	font-size: 12px;
+}
+body[data-font='14'] {
+	font-size: 14px;
+}
+body[data-font='16'] {
+	font-size: 16px;
+}
+body[data-font='18'] {
+	font-size: 18px;
+}
+body[data-font='20'] {
+	font-size: 20px;
+}
+body[data-font='22'] {
+	font-size: 22px;
+}
+body[data-font='24'] {
+	font-size: 24px;
+}
+
+.container {
+	margin-inline: auto;
+	width: 100%;
+	max-width: 768px;
+	min-height: 100dvh;
+}
+
+@media screen and (min-width: 380px) {
+	:root {
+		font-size: 16px;
+	}
+}
+
+@media screen and (min-width: 640px) {
+	:root {
+		font-size: 18px;
+	}
+}
+
