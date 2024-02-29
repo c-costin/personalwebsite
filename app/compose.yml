@@ -2,7 +2,15 @@ name: personalwebsite
 
 services:
 
-  web:
+  # Container => App
+  app-personalwebsite:
+    container_name: personalwebsite-app
     build: ./
+    networks:
+      - public
     ports:
       - '58000:3000'
+
+networks:
+  public:
+    name: personalwebsite-public
