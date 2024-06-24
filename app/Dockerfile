@@ -1,14 +1,17 @@
-FROM node@sha256:0ed207ef98ec6ecc0b79c6158175c75e27f8ca283afe1ccbcf20d7153fb43047
-
-RUN apt update && apt upgrade -y
-RUN npm i -g pnpm
-
+FROM node:22-slim AS base
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+RUN corepack enable
+COPY . /app
 WORKDIR /app
 
-COPY . .
+FROM base AS prod-deps
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --prod --frozen-lockfile
 
-RUN pnpm install
+FROM base AS build
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
 RUN pnpm run build
-RUN pnpm prune --prod
 
-CMD [ "node", "build/index.js" ]
+FROM base
+COPY --from=prod-deps /app/node_modules /app/node_modules
+COPY --from=build /app/build /app/build

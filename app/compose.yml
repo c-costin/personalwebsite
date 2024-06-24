@@ -1,16 +1,24 @@
-name: personalwebsite
 
 services:
-
-  # Container => App
-  app-personalwebsite:
-    container_name: personalwebsite-app
+  # Container => App SvelteKit
+  app_personalwebsite:
+    container_name: app_personalwebsite
     build: ./
+    restart: unless-stopped
     networks:
-      - public
+      - traefik_public_network
     ports:
-      - '58000:3000'
+      - 54000:3000
+    command: 'node -r dotenv/config build/index.js'
+    labels:
+      traefik.enable: true
+      traefik.docker.network: traefik_public_network
+      traefik.http.routers.app_personalwebsite.entrypoints: main_secure
+      traefik.http.routers.app_personalwebsite.rule: Host(`costincadeau.fr`)
+      traefik.http.routers.app_personalwebsite.tls: true
+      traefik.http.routers.app_personalwebsite.tls.certresolver: main_certs
 
+# Declaration networks
 networks:
-  public:
-    name: personalwebsite-public
+  traefik_public_network:
+    external: true
