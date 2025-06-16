@@ -14,7 +14,7 @@ services:
       traefik.enable: true
       traefik.docker.network: traefik_public_network
       traefik.http.routers.app_personalwebsite.entrypoints: main_secure
-      traefik.http.routers.app_personalwebsite.rule: Host(`costincadeau.fr`)
+      traefik.http.routers.app_personalwebsite.rule: Host(`costincadeau.fr`) || (Host(`www.costincadeau.fr`))
       traefik.http.routers.app_personalwebsite.tls: true
       traefik.http.routers.app_personalwebsite.tls.certresolver: main_certs
 
